@@ -1,0 +1,127 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.HeatFlow1D.Interfaces"></A><A HREF="ModelicaAdditions_HeatFlow1D.html#ModelicaAdditions.HeatFlow1D"
+>ModelicaAdditions.HeatFlow1D</A>.Interfaces</H2>
+<B>Connectors and partial models for 1D heat flow</B>
+<P>
+<A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces.Surface_a"
+><IMG SRC="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_aI.gif" ALT="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_a" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces.Surface_b"
+><IMG SRC="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_bI.gif" ALT="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_b" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces.AbsoluteSensor"
+><IMG SRC="ModelicaAdditions.HeatFlow1D.Interfaces.AbsoluteSensorI.gif" ALT="ModelicaAdditions.HeatFlow1D.Interfaces.AbsoluteSensor" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces.RelativeSensor"
+><IMG SRC="ModelicaAdditions.HeatFlow1D.Interfaces.RelativeSensorI.gif" ALT="ModelicaAdditions.HeatFlow1D.Interfaces.RelativeSensor" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_bI.gif" ALT="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_b" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_b"></A><A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces"
+>ModelicaAdditions.HeatFlow1D.Interfaces</A>.Surface_b</H2>
+<B>1D Heat flow connector (non-filled icon)</B><p>
+<IMG SRC="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_bD.gif" ALT="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_b">
+<H3>Modelica definition</H3>
+<PRE>
+connector Surface_b &quot;1D Heat flow connector (non-filled icon)&quot;
+  SIunits.Temperature T &quot;Absolute temperature&quot;;
+  flow SIunits.HeatFlux q &quot;Heat flowing into element&quot;;
+  <I></I>
+end Surface_b;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_aI.gif" ALT="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_a" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_a"></A><A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces"
+>ModelicaAdditions.HeatFlow1D.Interfaces</A>.Surface_a</H2>
+<B>1D Heat flow connector (filled icon)</B><p>
+<IMG SRC="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_aD.gif" ALT="ModelicaAdditions.HeatFlow1D.Interfaces.Surface_a">
+<H3>Modelica definition</H3>
+<PRE>
+connector Surface_a &quot;1D Heat flow connector (filled icon)&quot;
+  SIunits.Temperature T &quot;Absolute temperature&quot;;
+  flow SIunits.HeatFlux q &quot;Heat flowing into element&quot;;
+  <I></I>
+end Surface_a;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.HeatFlow1D.Interfaces.AbsoluteSensorI.gif" ALT="ModelicaAdditions.HeatFlow1D.Interfaces.AbsoluteSensor" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.HeatFlow1D.Interfaces.AbsoluteSensor"></A><A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces"
+>ModelicaAdditions.HeatFlow1D.Interfaces</A>.AbsoluteSensor</H2>
+<B>Device to measure a single connector variable</B><p>
+<IMG SRC="ModelicaAdditions.HeatFlow1D.Interfaces.AbsoluteSensorD.gif" ALT="ModelicaAdditions.HeatFlow1D.Interfaces.AbsoluteSensor">
+<H3>Information</H3>
+<PRE>
+</PRE>
+<p>
+This is the superclass of a 1D component with one surface and one
+output signal in order to measure a heat flow quantity in the surface
+and to provide the measured signal as output signal for further processing
+with the Modelica.Blocks blocks.
+</p>
+
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>June 15, 2000</i>
+       by <a href="http://www.op.dlr.de/~otter/">Martin Otter</a>:<br>
+       Realized.</li>
+</ul>
+<PRE>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+partial model AbsoluteSensor
+  &quot;Device to measure a single connector variable&quot;
+  extends <A HREF="../../modelica/help/Modelica_Icons.html#Modelica.Icons.TranslationalSensor"
+>Modelica.Icons.TranslationalSensor</A>;
+  <I></I>
+  <A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces.Surface_a"
+>Interfaces.Surface_a</A> surface_a;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(final n=1);
+end AbsoluteSensor;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.HeatFlow1D.Interfaces.RelativeSensorI.gif" ALT="ModelicaAdditions.HeatFlow1D.Interfaces.RelativeSensor" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.HeatFlow1D.Interfaces.RelativeSensor"></A><A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces"
+>ModelicaAdditions.HeatFlow1D.Interfaces</A>.RelativeSensor</H2>
+<B>Device to measure a single relative variable between two surfaces</B><p>
+<IMG SRC="ModelicaAdditions.HeatFlow1D.Interfaces.RelativeSensorD.gif" ALT="ModelicaAdditions.HeatFlow1D.Interfaces.RelativeSensor">
+<H3>Information</H3>
+<PRE>
+</PRE>
+<p>
+This is a superclass for 1D components with two surfaces
+and one output signal in order to measure relative quantities
+between the two surfaces and
+to provide the measured signal as output signal for further processing
+with the Modelica.Blocks blocks.
+</p>
+
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>June 15, 2000</i>
+       by <a href="http://www.op.dlr.de/~otter/">Martin Otter</a>:<br>
+       Realized.</li>
+</ul>
+<PRE>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+model RelativeSensor
+  &quot;Device to measure a single relative variable between two surfaces&quot;
+
+  extends <A HREF="../../modelica/help/Modelica_Icons.html#Modelica.Icons.TranslationalSensor"
+>Modelica.Icons.TranslationalSensor</A>;
+  <I></I>
+  <A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces.Surface_a"
+>Interfaces.Surface_a</A> surface_a;
+  <A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces.Surface_b"
+>Interfaces.Surface_b</A> surface_b;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(final n=1);
+end RelativeSensor;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Jun 20 22:14:52 2000
+.
+</address></BODY>
+</HTML>

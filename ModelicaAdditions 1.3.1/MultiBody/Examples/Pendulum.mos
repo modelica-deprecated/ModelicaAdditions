@@ -1,0 +1,4 @@
+openModel("MultiBody.Examples.Pendulum")
+simulateModel("MultiBody.Examples.Pendulum",0,4,0,0.01)
+plot({"revolute.q","revolute.qd"})
+

@@ -1,0 +1,183 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.HeatFlow1D.Sensors"></A><A HREF="ModelicaAdditions_HeatFlow1D.html#ModelicaAdditions.HeatFlow1D"
+>ModelicaAdditions.HeatFlow1D</A>.Sensors</H2>
+<B>Sensor for 1D heat flow components</B>
+<P>
+<A HREF="ModelicaAdditions_HeatFlow1D_Sensors.html#ModelicaAdditions.HeatFlow1D.Sensors.HeatFlux"
+><IMG SRC="ModelicaAdditions.HeatFlow1D.Sensors.HeatFluxI.gif" ALT="ModelicaAdditions.HeatFlow1D.Sensors.HeatFlux" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_HeatFlow1D_Sensors.html#ModelicaAdditions.HeatFlow1D.Sensors.Temperature"
+><IMG SRC="ModelicaAdditions.HeatFlow1D.Sensors.TemperatureI.gif" ALT="ModelicaAdditions.HeatFlow1D.Sensors.Temperature" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_HeatFlow1D_Sensors.html#ModelicaAdditions.HeatFlow1D.Sensors.Temperature_C"
+><IMG SRC="ModelicaAdditions.HeatFlow1D.Sensors.Temperature_CI.gif" ALT="ModelicaAdditions.HeatFlow1D.Sensors.Temperature_C" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_HeatFlow1D_Sensors.html#ModelicaAdditions.HeatFlow1D.Sensors.RelativeTemperature"
+><IMG SRC="ModelicaAdditions.HeatFlow1D.Sensors.RelativeTemperatureI.gif" ALT="ModelicaAdditions.HeatFlow1D.Sensors.RelativeTemperature" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.HeatFlow1D.Sensors.HeatFluxI.gif" ALT="ModelicaAdditions.HeatFlow1D.Sensors.HeatFlux" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.HeatFlow1D.Sensors.HeatFlux"></A><A HREF="ModelicaAdditions_HeatFlow1D_Sensors.html#ModelicaAdditions.HeatFlow1D.Sensors"
+>ModelicaAdditions.HeatFlow1D.Sensors</A>.HeatFlux</H2>
+<B>Ideal sensor to measure the heat flux between two surfaces</B><p>
+<IMG SRC="ModelicaAdditions.HeatFlow1D.Sensors.HeatFluxD.gif" ALT="ModelicaAdditions.HeatFlow1D.Sensors.HeatFlux">
+<H3>Information</H3>
+<PRE>
+</PRE>
+<p>
+Measures the <i>heatflux between two surfacess</i> in an ideal way
+and provides the result as output signal (to be further processed
+with blocks of the Modelica.Blocks library).
+</p>
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>June 15, 2000</i>
+       by <a href="http://www.op.dlr.de/~otter/">Martin Otter</a>:<br>
+       Realized.</li>
+</ul>
+<PRE>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+model HeatFlux
+  &quot;Ideal sensor to measure the heat flux between two surfaces&quot;
+  extends <A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces.RelativeSensor"
+>Interfaces.RelativeSensor</A>;
+  SIunits.HeatFlux q
+    &quot;heat flux from surface_a to surface_b (q = surface_a.q = -surface_b.q)&quot;
+    ;
+equation
+  surface_a.T = surface_b.T;
+  surface_a.q = q;
+  surface_b.q = -q;
+  q = outPort.signal[1];
+end HeatFlux;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.HeatFlow1D.Sensors.TemperatureI.gif" ALT="ModelicaAdditions.HeatFlow1D.Sensors.Temperature" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.HeatFlow1D.Sensors.Temperature"></A><A HREF="ModelicaAdditions_HeatFlow1D_Sensors.html#ModelicaAdditions.HeatFlow1D.Sensors"
+>ModelicaAdditions.HeatFlow1D.Sensors</A>.Temperature</H2>
+<B>Ideal sensor to measure the absolute temperature in Kelvin</B><p>
+<IMG SRC="ModelicaAdditions.HeatFlow1D.Sensors.TemperatureD.gif" ALT="ModelicaAdditions.HeatFlow1D.Sensors.Temperature">
+<H3>Information</H3>
+<PRE>
+</PRE>
+<p>
+Measures the <b>absolute temperature</b> (in Kelvin) of a surface in an ideal way and
+provides the result as
+output signals (to be further processed with blocks of the
+Modelica.Blocks library).
+</p>
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>June 15, 2000</i>
+       by <a href="http://www.op.dlr.de/~otter/">Martin Otter</a>:<br>
+       Realized.</li>
+</ul>
+<PRE>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+model Temperature
+  &quot;Ideal sensor to measure the absolute temperature in Kelvin&quot;
+  extends <A HREF="../../modelica/help/Modelica_Icons.html#Modelica.Icons.TranslationalSensor"
+>Modelica.Icons.TranslationalSensor</A>;
+  SIunits.Temperature T &quot;Kelvin temperature&quot;;
+  <I></I>
+  <A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces.Surface_a"
+>Interfaces.Surface_a</A> surface_a;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(final n=1);
+equation
+  T = surface_a.T;
+  T = outPort.signal[1];
+  0 = surface_a.q;
+end Temperature;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.HeatFlow1D.Sensors.Temperature_CI.gif" ALT="ModelicaAdditions.HeatFlow1D.Sensors.Temperature_C" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.HeatFlow1D.Sensors.Temperature_C"></A><A HREF="ModelicaAdditions_HeatFlow1D_Sensors.html#ModelicaAdditions.HeatFlow1D.Sensors"
+>ModelicaAdditions.HeatFlow1D.Sensors</A>.Temperature_C</H2>
+<B>Ideal sensor to measure the temperature in Celcius</B><p>
+<IMG SRC="ModelicaAdditions.HeatFlow1D.Sensors.Temperature_CD.gif" ALT="ModelicaAdditions.HeatFlow1D.Sensors.Temperature_C">
+<H3>Information</H3>
+<PRE>
+</PRE>
+<p>
+Measures the <b>Celsius temperature</b> of a surface in an ideal way and
+provides the result as
+output signals (to be further processed with blocks of the
+Modelica.Blocks library).
+</p>
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>June 15, 2000</i>
+       by <a href="http://www.op.dlr.de/~otter/">Martin Otter</a>:<br>
+       Realized.</li>
+</ul>
+<PRE>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+model Temperature_C
+  &quot;Ideal sensor to measure the temperature in Celcius&quot;
+  extends <A HREF="../../modelica/help/Modelica_Icons.html#Modelica.Icons.TranslationalSensor"
+>Modelica.Icons.TranslationalSensor</A>;
+  SIunits.Temp_C T &quot;Celsius temperature&quot;;
+  <I></I>
+  <A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces.Surface_a"
+>Interfaces.Surface_a</A> surface_a;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(final n=1);
+equation
+  T = surface_a.T + Modelica.Constants.T_zero;
+  T = outPort.signal[1];
+  0 = surface_a.q;
+end Temperature_C;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.HeatFlow1D.Sensors.RelativeTemperatureI.gif" ALT="ModelicaAdditions.HeatFlow1D.Sensors.RelativeTemperature" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.HeatFlow1D.Sensors.RelativeTemperature"></A><A HREF="ModelicaAdditions_HeatFlow1D_Sensors.html#ModelicaAdditions.HeatFlow1D.Sensors"
+>ModelicaAdditions.HeatFlow1D.Sensors</A>.RelativeTemperature</H2>
+<B>Ideal sensor to measure the relative temperature between two surfaces</B><p>
+<IMG SRC="ModelicaAdditions.HeatFlow1D.Sensors.RelativeTemperatureD.gif" ALT="ModelicaAdditions.HeatFlow1D.Sensors.RelativeTemperature">
+<H3>Information</H3>
+<PRE>
+</PRE>
+<p>
+Measures the <b>relative temperature T_rel</b> between two surfaces
+in an ideal way and provides the result as output signal outPort.signal[1]
+(to be further processed with blocks of the Modelica.Blocks library).
+</p>
+
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>July 15, 2000</i>
+       by <a href="http://www.op.dlr.de/~otter/">Martin Otter</a>:<br>
+       realized.
+</li>
+</ul>
+
+<PRE>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+model RelativeTemperature
+  &quot;Ideal sensor to measure the relative temperature between two surfaces&quot;
+
+  extends <A HREF="ModelicaAdditions_HeatFlow1D_Interfaces.html#ModelicaAdditions.HeatFlow1D.Interfaces.RelativeSensor"
+>Interfaces.RelativeSensor</A>;
+  SIunits.Temperature T_rel
+    &quot;Relative temperature between two surfaces (surface_b.T - surface_a.T)&quot;
+    ;
+equation
+  T_rel = surface_b.T - surface_a.T;
+  T_rel = outPort.signal[1];
+  0 = surface_a.q;
+  0 = surface_b.q;
+end RelativeTemperature;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Jun 20 22:15:04 2000
+.
+</address></BODY>
+</HTML>

@@ -1,0 +1,5 @@
+instantiateModel("ModelicaAdditions.MultiBody.Examples.Loops.Engine1")
+r1.qd:=-157;
+simulateModel("ModelicaAdditions.MultiBody.Examples.Loops.Engine1",0,0.2,0,0.002,"dassl",1e-8)
+plot({"x","V"})
+

@@ -1,0 +1,352 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.MultiBody.Forces"></A><A HREF="ModelicaAdditions_MultiBody.html#ModelicaAdditions.MultiBody"
+>ModelicaAdditions.MultiBody</A>.Forces</H2>
+<B>Force and torque elements for 3D mechanical components</B>
+<P>
+<A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces.ExtForce"
+><IMG SRC="ModelicaAdditions.MultiBody.Forces.ExtForceI.gif" ALT="ModelicaAdditions.MultiBody.Forces.ExtForce" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces.ExtTorque"
+><IMG SRC="ModelicaAdditions.MultiBody.Forces.ExtTorqueI.gif" ALT="ModelicaAdditions.MultiBody.Forces.ExtTorque" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces.ExtLineForce"
+><IMG SRC="ModelicaAdditions.MultiBody.Forces.ExtLineForceI.gif" ALT="ModelicaAdditions.MultiBody.Forces.ExtLineForce" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces.ExtLineTorque"
+><IMG SRC="ModelicaAdditions.MultiBody.Forces.ExtLineTorqueI.gif" ALT="ModelicaAdditions.MultiBody.Forces.ExtLineTorque" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces.Spring"
+><IMG SRC="ModelicaAdditions.MultiBody.Forces.SpringI.gif" ALT="ModelicaAdditions.MultiBody.Forces.Spring" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces.Damper"
+><IMG SRC="ModelicaAdditions.MultiBody.Forces.DamperI.gif" ALT="ModelicaAdditions.MultiBody.Forces.Damper" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces.SpringDamperPar"
+><IMG SRC="ModelicaAdditions.MultiBody.Forces.SpringDamperParI.gif" ALT="ModelicaAdditions.MultiBody.Forces.SpringDamperPar" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces.SpringDamperSer"
+><IMG SRC="ModelicaAdditions.MultiBody.Forces.SpringDamperSerI.gif" ALT="ModelicaAdditions.MultiBody.Forces.SpringDamperSer" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE>
+</PRE>
+<p>
+This package contains components to model forces and torques
+in a 3D system.
+</p>
+
+<dl>
+<dt><b>Main Author:</b>
+<dd><a href="http://www.op.dlr.de/~otter/">Martin Otter</a><br>
+    Deutsches Zentrum f&uuml;r Luft und Raumfahrt e.V. (DLR)<br>
+    Institut f&uuml;r Robotik und Mechatronik<br>
+    Postfach 1116<br>
+    D-82230 Wessling<br>
+    Germany<br>
+    email: <A HREF="mailto:Martin.Otter@dlr.de">Martin.Otter@dlr.de</A><br>
+</dl>
+<br>
+
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>April 5, 2000</i>
+       by <a href="http://www.op.dlr.de/~otter/">Martin Otter</a>:<br>
+       Realized.</li>
+</ul>
+<br>
+
+<p><b>Copyright (C) 2000, DLR.</b></p>
+
+<p><i>
+The Modelica package is <b>free</b> software; it can be redistributed and/or modified
+under the terms of the <b>Modelica license</b>, see the license conditions
+and the accompanying <b>disclaimer</b> in the documentation of package
+Modelica in file "Modelica/package.mo".
+</i></p>
+<PRE>
+</PRE><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Forces.ExtForceI.gif" ALT="ModelicaAdditions.MultiBody.Forces.ExtForce" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Forces.ExtForce"></A><A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces"
+>ModelicaAdditions.MultiBody.Forces</A>.ExtForce</H2>
+<B>External force</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Forces.ExtForceD.gif" ALT="ModelicaAdditions.MultiBody.Forces.ExtForce">
+<H3>Information</H3>
+<PRE>
+An external force element exerts the inport signal
+as negative force on frame_b.
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+model ExtForce &quot;External force&quot;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.ExtForceBase"
+>MultiBody.Interfaces.ExtForceBase</A>;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(final n=3);
+equation
+  frame_b.f = -inPort.signal;
+end ExtForce;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Forces.ExtTorqueI.gif" ALT="ModelicaAdditions.MultiBody.Forces.ExtTorque" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Forces.ExtTorque"></A><A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces"
+>ModelicaAdditions.MultiBody.Forces</A>.ExtTorque</H2>
+<B>External torque</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Forces.ExtTorqueD.gif" ALT="ModelicaAdditions.MultiBody.Forces.ExtTorque">
+<H3>Information</H3>
+<PRE>
+An external torque element exerts the inport signals as
+negative torque on frame_b.
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+model ExtTorque &quot;External torque&quot;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.ExtTorqueBase"
+>MultiBody.Interfaces.ExtTorqueBase</A>;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(final n=3);
+equation
+  frame_b.t = -inPort.signal;
+end ExtTorque;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Forces.ExtLineForceI.gif" ALT="ModelicaAdditions.MultiBody.Forces.ExtLineForce" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Forces.ExtLineForce"></A><A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces"
+>ModelicaAdditions.MultiBody.Forces</A>.ExtLineForce</H2>
+<B>External line force</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Forces.ExtLineForceD.gif" ALT="ModelicaAdditions.MultiBody.Forces.ExtLineForce">
+<H3>Information</H3>
+<PRE>
+External force acting at a specified, fixed direction on a body.
+
+The value of the force has to be supplied as input signal to
+this component using blocks of the block library.
+
+Parameters:
+  n(3): Direction of force. Vector is fixed in the body where this
+        component is attached. The vector has to be given in frame_b.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n[3]</TD><TD>{1,0,0}</TD><TD>direction of force (frame_b.f=-n*u)</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model ExtLineForce &quot;External line force&quot;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.ExtForceBase"
+>MultiBody.Interfaces.ExtForceBase</A>;
+  parameter Real n[3]={1,0,0} &quot;direction of force (frame_b.f=-n*u)&quot;;
+  SIunits.Force u;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(final n=1);
+equation
+  u = inPort.signal[1];
+  frame_b.f = -n*u;
+end ExtLineForce;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Forces.ExtLineTorqueI.gif" ALT="ModelicaAdditions.MultiBody.Forces.ExtLineTorque" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Forces.ExtLineTorque"></A><A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces"
+>ModelicaAdditions.MultiBody.Forces</A>.ExtLineTorque</H2>
+<B>External line torque</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Forces.ExtLineTorqueD.gif" ALT="ModelicaAdditions.MultiBody.Forces.ExtLineTorque">
+<H3>Information</H3>
+<PRE>
+External torque acting at a specified, fixed direction on a body.
+
+The value of the torque has to be supplied as input signal to
+this component using blocks of the block library.
+
+Parameters:
+  n(3): Direction of torque. Vector is fixed in the body where this
+        component is attached. The vector has to be given in frame_b.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n[3]</TD><TD>{1,0,0}</TD><TD>direction of torque (frame_b.t=-n*u)</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model ExtLineTorque &quot;External line torque&quot;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.ExtTorqueBase"
+>MultiBody.Interfaces.ExtTorqueBase</A>;
+  parameter Real n[3]={1,0,0} &quot;direction of torque (frame_b.t=-n*u)&quot;
+    ;
+  SIunits.Torque u;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(final n=1);
+equation
+  u = inPort.signal[1];
+  frame_b.t = -n*u;
+end ExtLineTorque;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Forces.SpringI.gif" ALT="ModelicaAdditions.MultiBody.Forces.Spring" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Forces.Spring"></A><A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces"
+>ModelicaAdditions.MultiBody.Forces</A>.Spring</H2>
+<B>Linear spring</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Forces.SpringD.gif" ALT="ModelicaAdditions.MultiBody.Forces.Spring">
+<H3>Information</H3>
+<PRE>
+(Translational) linear spring.
+
+Parameters:
+  c : spring constant in [N/m]
+  s0: length in [m], at which the spring force is zero
+
+Note: Both cuts of a force element have ALWAYS to be connected at the cut
+      of a joint, of a body or of the inertial system. It is not possible
+      to e.g. connect two force elements in series.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>c</TD><TD></TD><TD>Spring constant [N.m/rad]</TD></TR>
+<TR><TD>s0</TD><TD>0</TD><TD>Unstretched spring length [m]</TD></TR>
+<I><TR><TD>sEps</TD><TD>1.E-6</TD><TD>prevent zero-division if rel. distance s=0 [m]</TD></TR>
+</I></TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model Spring &quot;Linear spring&quot;
+  parameter Real c(final unit=&quot;N.m/rad&quot;, final min=0)
+    &quot;Spring constant&quot;;
+  parameter SIunits.Length s0=0 &quot;Unstretched spring length&quot;;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.LineForce"
+>MultiBody.Interfaces.LineForce</A>;
+equation
+  f = c*(s - s0);
+end Spring;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Forces.DamperI.gif" ALT="ModelicaAdditions.MultiBody.Forces.Damper" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Forces.Damper"></A><A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces"
+>ModelicaAdditions.MultiBody.Forces</A>.Damper</H2>
+<B>Linear (velocity dependent) damper</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Forces.DamperD.gif" ALT="ModelicaAdditions.MultiBody.Forces.Damper">
+<H3>Information</H3>
+<PRE>
+Translational, velocity dependent, linear damper.
+
+Parameters:
+  d: damping constant in [N*s/m]
+
+Note: Both cuts of a force element have ALWAYS to be connected at the cut
+      of a joint, of a body or of the inertial system. It is not possible
+      to e.g. connect two force elements in series.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>d</TD><TD>0</TD><TD>Damping constant [N.m.s/rad]</TD></TR>
+<I><TR><TD>sEps</TD><TD>1.E-6</TD><TD>prevent zero-division if rel. distance s=0 [m]</TD></TR>
+</I></TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model Damper &quot;Linear (velocity dependent) damper&quot;
+  parameter Real d(
+    final unit=&quot;N.m.s/rad&quot;,
+    final min=0) = 0 &quot;Damping constant&quot;;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.LineForce"
+>MultiBody.Interfaces.LineForce</A>;
+equation
+  f = d*sd;
+end Damper;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Forces.SpringDamperParI.gif" ALT="ModelicaAdditions.MultiBody.Forces.SpringDamperPar" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Forces.SpringDamperPar"></A><A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces"
+>ModelicaAdditions.MultiBody.Forces</A>.SpringDamperPar</H2>
+<B>Linear spring and linear damper in parallel</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Forces.SpringDamperParD.gif" ALT="ModelicaAdditions.MultiBody.Forces.SpringDamperPar">
+<H3>Information</H3>
+<PRE>
+(Translational) linear spring and linear damper in parallel.
+
+Parameters:
+  c : spring constant in [N/m]
+  s0: length in [m], at which the spring force is zero
+  d : damping constant in [N*s/m]
+
+Note: Both cuts of a force element have ALWAYS to be connected at the cut
+      of a joint, of a body or of the inertial system. It is not possible
+      to e.g. connect two force elements in series.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>c</TD><TD></TD><TD>Spring constant [N.m/rad]</TD></TR>
+<TR><TD>s0</TD><TD>0</TD><TD>Unstretched spring length [m]</TD></TR>
+<TR><TD>d</TD><TD>0</TD><TD>Damping constant [N.m.s/rad]</TD></TR>
+<I><TR><TD>sEps</TD><TD>1.E-6</TD><TD>prevent zero-division if rel. distance s=0 [m]</TD></TR>
+</I></TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model SpringDamperPar &quot;Linear spring and linear damper in parallel&quot;
+  parameter Real c(final unit=&quot;N.m/rad&quot;, final min=0)
+    &quot;Spring constant&quot;;
+  parameter SIunits.Length s0=0 &quot;Unstretched spring length&quot;;
+  parameter Real d(
+    final unit=&quot;N.m.s/rad&quot;,
+    final min=0) = 0 &quot;Damping constant&quot;;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.LineForce"
+>MultiBody.Interfaces.LineForce</A>;
+equation
+  f = c*(s - s0) + d*sd;
+end SpringDamperPar;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Forces.SpringDamperSerI.gif" ALT="ModelicaAdditions.MultiBody.Forces.SpringDamperSer" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Forces.SpringDamperSer"></A><A HREF="ModelicaAdditions_MultiBody_Forces.html#ModelicaAdditions.MultiBody.Forces"
+>ModelicaAdditions.MultiBody.Forces</A>.SpringDamperSer</H2>
+<B>Linear spring and linear damper in series connection</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Forces.SpringDamperSerD.gif" ALT="ModelicaAdditions.MultiBody.Forces.SpringDamperSer">
+<H3>Information</H3>
+<PRE>
+(Translational) linear spring and linear damper in
+series connection:
+
+  cut a --&gt; damper ----&gt; spring --&gt; cut b
+        |              |
+        |------ x -----|  (x is the state variable of this system)
+
+Parameters:
+  c : spring constant in [N/m]
+  s0: length in [m], at which the spring force is zero
+  d : damping constant in [N*s/m]
+
+Terminal variables:
+  x : length of damper in [m]. The spring length = s - x.
+
+Note: Both cuts of a force element have ALWAYS to be connected at the cut
+      of a joint, of a body or of the inertial system. It is not possible
+      to e.g. connect two force elements in series.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>c</TD><TD></TD><TD>Spring constant [N.m/rad]</TD></TR>
+<TR><TD>s0</TD><TD>0</TD><TD>Unstretched spring length [m]</TD></TR>
+<TR><TD>d</TD><TD>0</TD><TD>Damping constant [N.m.s/rad]</TD></TR>
+<I><TR><TD>sEps</TD><TD>1.E-6</TD><TD>prevent zero-division if rel. distance s=0 [m]</TD></TR>
+</I></TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model SpringDamperSer
+  &quot;Linear spring and linear damper in series connection&quot;
+  <I></I>
+  parameter Real c(final unit=&quot;N.m/rad&quot;, final min=0)
+    &quot;Spring constant&quot;;
+  parameter SIunits.Length s0=0 &quot;Unstretched spring length&quot;;
+  parameter Real d(
+    final unit=&quot;N.m.s/rad&quot;,
+    final min=0) = 0 &quot;Damping constant&quot;;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.LineForce"
+>MultiBody.Interfaces.LineForce</A>;
+  SIunits.Position x;
+equation
+  f = c*(s - s0 - x);
+  d*der(x) = f;
+end SpringDamperSer;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Jun 20 22:16:14 2000
+.
+</address></BODY>
+</HTML>

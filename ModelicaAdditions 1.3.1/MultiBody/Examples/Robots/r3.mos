@@ -1,0 +1,5 @@
+Evaluate = true
+translateModel("ModelicaAdditions.MultiBody.Examples.Robots.r3.robot")
+experiment StopTime=1.5
+simulate
+plot({"robot.mechanics.tau[1]","robot.mechanics.tau[2]"});

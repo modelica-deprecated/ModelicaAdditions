@@ -1,0 +1,519 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.Blocks.Logical"></A><A HREF="ModelicaAdditions_Blocks.html#ModelicaAdditions.Blocks"
+>ModelicaAdditions.Blocks</A>.Logical</H2>
+<A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.InterfacesI.gif" ALT="ModelicaAdditions.Blocks.Logical.Interfaces" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.NOT"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.NOTI.gif" ALT="ModelicaAdditions.Blocks.Logical.NOT" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.OR"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.ORI.gif" ALT="ModelicaAdditions.Blocks.Logical.OR" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.AND"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.ANDI.gif" ALT="ModelicaAdditions.Blocks.Logical.AND" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.XOR"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.XORI.gif" ALT="ModelicaAdditions.Blocks.Logical.XOR" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.NOR"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.NORI.gif" ALT="ModelicaAdditions.Blocks.Logical.NOR" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.NAND"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.NANDI.gif" ALT="ModelicaAdditions.Blocks.Logical.NAND" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.LogicalSwitch"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.LogicalSwitchI.gif" ALT="ModelicaAdditions.Blocks.Logical.LogicalSwitch" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.Switch"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.SwitchI.gif" ALT="ModelicaAdditions.Blocks.Logical.Switch" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.Boolean2Real"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.Boolean2RealI.gif" ALT="ModelicaAdditions.Blocks.Logical.Boolean2Real" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.GreaterThan"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.GreaterThanI.gif" ALT="ModelicaAdditions.Blocks.Logical.GreaterThan" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.GreaterEqual"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.GreaterEqualI.gif" ALT="ModelicaAdditions.Blocks.Logical.GreaterEqual" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.LessThan"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.LessThanI.gif" ALT="ModelicaAdditions.Blocks.Logical.LessThan" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.LessEqual"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.LessEqualI.gif" ALT="ModelicaAdditions.Blocks.Logical.LessEqual" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE>
+</PRE>
+<p>
+This package contains components to operate on <b>Boolean signals</b>.
+</p>
+
+<p>
+This package is not part of the Modelica standard library, because it is
+planned to vectorize all components and to support alternatively
+the American symbols for the logical operators.
+</p>
+
+<dl>
+<dt><b>Main Author:</b>
+<dd><a href="http://www.op.dlr.de/~otter/">Martin Otter</a><br>
+    Deutsches Zentrum f&uuml;r Luft und Raumfahrt e.V. (DLR)<br>
+    Institut f&uuml;r Robotik und Mechatronik<br>
+    Postfach 1116<br>
+    D-82230 Wessling<br>
+    Germany<br>
+    email: <A HREF="mailto:Martin.Otter@dlr.de">Martin.Otter@dlr.de</A><br>
+</dl>
+<br>
+
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>June 14, 2000</i>
+       by <a href="http://www.op.dlr.de/~otter/">Martin Otter</a>:<br>
+       Realized based on an existing Dymola library of
+       Dieter Moormann and Hilding Elmqvist.</li>
+</ul>
+<br>
+
+
+<p><b>Copyright (C) 2000, DLR.</b></p>
+
+<p><i>
+The ModelicaAdditions.Blocks.Logical package is <b>free</b> software;
+it can be redistributed and/or modified
+under the terms of the <b>Modelica license</b>, see the license conditions
+and the accompanying <b>disclaimer</b> in the documentation of package
+Modelica in file "Modelica/package.mo".
+</i></p>
+<PRE>
+</PRE><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.NOTI.gif" ALT="ModelicaAdditions.Blocks.Logical.NOT" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.NOT"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.NOT</H2>
+<B>Logical NOT Block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.NOTD.gif" ALT="ModelicaAdditions.Blocks.Logical.NOT">
+<H3>Information</H3>
+<PRE>
+Logical NOT Block
+
+The output y is true, if the input u is false.
+The output y is false, if the input u is true.
+
++---------------------------+
+|   input         output    |
+|            -&gt;             |
+|     u             y       |
++---------------------------+
+|    true          false    |
+|    false         true     |
++----------------------------
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+block NOT &quot;Logical NOT Block&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanSISO"
+>Modelica.Blocks.Interfaces.BooleanSISO</A>;
+equation
+  y = not u;
+end NOT;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.ORI.gif" ALT="ModelicaAdditions.Blocks.Logical.OR" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.OR"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.OR</H2>
+<B>Logical OR Block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.ORD.gif" ALT="ModelicaAdditions.Blocks.Logical.OR">
+<H3>Information</H3>
+<PRE>
+Logical OR Block
+
+The output y is false, if the first input u1 and the
+second input u2 are both false.
+In all other cases the output y is true.
+
++---------------------------------+
+|     input             output    |
+|                  -&gt;             |
+|   u1     u2            y        |
++---------------------------------+
+|   true   true          true     |
+|   true   false         true     |
+|   false  true          true     |
+|   false  false         false    |
++---------------------------------+
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+block OR &quot;Logical OR Block&quot;
+  extends <A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO"
+>Interfaces.BooleanSI2SO</A>;
+equation
+  y = u1 or u2;
+end OR;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.ANDI.gif" ALT="ModelicaAdditions.Blocks.Logical.AND" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.AND"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.AND</H2>
+<B>Logical AND Block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.ANDD.gif" ALT="ModelicaAdditions.Blocks.Logical.AND">
+<H3>Information</H3>
+<PRE>
+Logical AND Block
+
+The output y is true, if the first input u1 and
+the second input u2 are both true.
+In all other cases the output y is false.
+
++---------------------------------+
+|     input             output    |
+|                  -&gt;             |
+|   u1     u2            y        |
++---------------------------------+
+|   true   true          true     |
+|   true   false         false    |
+|   false  true          false    |
+|   false  false         false    |
++---------------------------------+
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+block AND &quot;Logical AND Block&quot;
+  extends <A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO"
+>Interfaces.BooleanSI2SO</A>;
+equation
+  y = u1 and u2;
+end AND;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.XORI.gif" ALT="ModelicaAdditions.Blocks.Logical.XOR" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.XOR"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.XOR</H2>
+<B>Logical Exclusive OR Block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.XORD.gif" ALT="ModelicaAdditions.Blocks.Logical.XOR">
+<H3>Information</H3>
+<PRE>
+Logical Exclusive OR Block
+
+The output y is false, if the first input u1 and
+the second input u2 are both false or both true.
+In all other cases the output y is true.
+
++---------------------------------+
+|     input             output    |
+|                  -&gt;             |
+|   u1     u2            y        |
++---------------------------------+
+|   true   true          false    |
+|   true   false         true     |
+|   false  true          true     |
+|   false  false         false    |
++---------------------------------+
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+block XOR &quot;Logical Exclusive OR Block&quot;
+  extends <A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO"
+>Interfaces.BooleanSI2SO</A>;
+equation
+  y = if (u1 and u2) or (not u1 and not u2) then false else true;
+end XOR;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.NORI.gif" ALT="ModelicaAdditions.Blocks.Logical.NOR" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.NOR"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.NOR</H2>
+<B>Logical NOR Block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.NORD.gif" ALT="ModelicaAdditions.Blocks.Logical.NOR">
+<H3>Information</H3>
+<PRE>
+Logical NOR Block
+
+The output y is true, if the first input u1 and
+the second input u2 are both false.
+In all other cases the output y is true.
+
++---------------------------------+
+|     input             output    |
+|                  -&gt;             |
+|   u1     u2            y        |
++---------------------------------+
+|   true   true          false    |
+|   true   false         false    |
+|   false  true          false    |
+|   false  false         true     |
++---------------------------------+
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+block NOR &quot;Logical NOR Block&quot;
+  extends <A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO"
+>Interfaces.BooleanSI2SO</A>;
+  <A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.NOT"
+>NOT</A> logicalNOT;
+  <A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.OR"
+>OR</A> logicalOR;
+equation
+  connect(logicalOR.outPort, logicalNOT.inPort);
+  connect(logicalNOT.outPort, outPort);
+  connect(inPort1, logicalOR.inPort1);
+  connect(inPort2, logicalOR.inPort2);
+end NOR;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.NANDI.gif" ALT="ModelicaAdditions.Blocks.Logical.NAND" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.NAND"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.NAND</H2>
+<B>Logical NAND Block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.NANDD.gif" ALT="ModelicaAdditions.Blocks.Logical.NAND">
+<H3>Information</H3>
+<PRE>
+Logical NAND Block
+
+The output y is false, if the first input u1 and
+the second input u2 are both true.
+In all other cases the output y is true.
+
++---------------------------------+
+|     input             output    |
+|                  -&gt;             |
+|   u1     u2            y        |
++---------------------------------+
+|   true   true          false    |
+|   true   false         true     |
+|   false  true          true     |
+|   false  false         true     |
++---------------------------------+
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+block NAND &quot;Logical NAND Block&quot;
+  extends <A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO"
+>Interfaces.BooleanSI2SO</A>;
+  <A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.NOT"
+>NOT</A> logicalNOT;
+  <A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.AND"
+>AND</A> logicalAND;
+equation
+  connect(logicalNOT.outPort, outPort);
+  connect(inPort1, logicalAND.inPort1);
+  connect(inPort2, logicalAND.inPort2);
+  connect(logicalAND.outPort, logicalNOT.inPort);
+end NAND;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.LogicalSwitchI.gif" ALT="ModelicaAdditions.Blocks.Logical.LogicalSwitch" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.LogicalSwitch"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.LogicalSwitch</H2>
+<B>Logical Switch</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.LogicalSwitchD.gif" ALT="ModelicaAdditions.Blocks.Logical.LogicalSwitch">
+<H3>Information</H3>
+<PRE>
+The LogicalSwitch switches, depending on the
+Boolean inPort2 connector (the middle connector),
+between the two possible input signals
+inPort1 (upper connector) and inPort3 (lower connector).
+
+If inPort2 is true, outPort is set equal to
+inPort1, else it is set equal to
+inPort2.
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+block LogicalSwitch &quot;Logical Switch&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanBlockIcon"
+>Modelica.Blocks.Interfaces.BooleanBlockIcon</A>;
+  <I></I>
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort1(final n=1, signal(final
+        start={true})) &quot;Connector of Boolean input signal 1&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort2(final n=1, signal(final
+        start={true})) &quot;Connector of Boolean input signal 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort3(final n=1, signal(final
+        start={true})) &quot;Connector of Boolean input signal 3&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutPort"
+>Modelica.Blocks.Interfaces.BooleanOutPort</A> outPort(final n=1, signal(
+        final start={true})) &quot;Connector of Boolean output signal&quot;;
+protected
+  Boolean u1(start=true) = inPort1.signal[1] &quot;Input signal 1&quot;;
+  Boolean u2(start=true) = inPort2.signal[1] &quot;Input signal 2&quot;;
+  Boolean u3(start=true) = inPort3.signal[1] &quot;Input signal 3&quot;;
+  Boolean y(start=true) = outPort.signal[1] &quot;Output signal&quot;;
+equation
+  <I></I>
+  y = if u2 then u1 else u3;
+end LogicalSwitch;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.SwitchI.gif" ALT="ModelicaAdditions.Blocks.Logical.Switch" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.Switch"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.Switch</H2>
+<B>Switch between two Real signal vectors</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.SwitchD.gif" ALT="ModelicaAdditions.Blocks.Logical.Switch">
+<H3>Information</H3>
+<PRE>
+The Logical.Switch switches, depending on the
+logical connector inPort2 (the middle connector)
+between the two possible input signals
+inPort1 (upper connector) and inPort3 (lower connector).
+
+If inPort2 is true, the outPort is set equal to
+inPort1, else it is set equal to
+inPort3.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n</TD><TD>1</TD><TD>size of input and output Real signal vectors</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+block Switch &quot;Switch between two Real signal vectors&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  parameter Integer n=1
+    &quot;size of input and output Real signal vectors&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort1(final n=n)
+    &quot;Connector of Real input signal 1&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort2(final n=1, signal(final
+        start={true})) &quot;Connector of Boolean input signal 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort3(final n=n)
+    &quot;Connector of Real input signal 3&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(final n=n)
+    &quot;Connector of Real output signal&quot;;
+  <I></I>
+protected
+  Real u1[n]=inPort1.signal &quot;Input signal 1&quot;;
+  Boolean u2(start=true) = inPort2.signal[1] &quot;Input signal 2&quot;;
+  Real u3[n]=inPort3.signal &quot;Input signal 3&quot;;
+  Real y[n]=outPort.signal &quot;Output signal&quot;;
+equation
+  y = if u2 then u1 else u3;
+end Switch;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.Boolean2RealI.gif" ALT="ModelicaAdditions.Blocks.Logical.Boolean2Real" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.Boolean2Real"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.Boolean2Real</H2>
+<B>Convert Boolean to Real signals</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.Boolean2RealD.gif" ALT="ModelicaAdditions.Blocks.Logical.Boolean2Real">
+<H3>Information</H3>
+<PRE>
+The Boolean2Real block transforms Boolean to Real signals.
+
+If the Boolean input is true, the Real output is
+the value of parameter realTrue, otherwise it is realFalse.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n</TD><TD>1</TD><TD>size of input and output signal vectors</TD></TR>
+<TR><TD>realTrue</TD><TD>1.0</TD><TD>Output signal for true Boolean input</TD></TR>
+<TR><TD>realFalse</TD><TD>0.0</TD><TD>Output signal for false Boolean input</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+block Boolean2Real &quot;Convert Boolean to Real signals&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  parameter Integer n=1 &quot;size of input and output signal vectors&quot;;
+  parameter Real realTrue=1.0 &quot;Output signal for true Boolean input&quot;
+    ;
+  parameter Real realFalse=0.0
+    &quot;Output signal for false Boolean input&quot;;
+  <I></I>
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort(final n=n)
+    &quot;Connector of Boolean input signals&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(final n=n)
+    &quot;Connector of Real output signals&quot;;
+  <I></I>
+protected
+  Boolean u[n](start=fill(true, n)) = inPort.signal &quot;Input signals&quot;;
+  Real y[n]=outPort.signal &quot;Output signals&quot;;
+equation
+  for i in 1:n loop
+    y[i] = if u[i] then realTrue else realFalse;
+  end for;
+end Boolean2Real;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.GreaterThanI.gif" ALT="ModelicaAdditions.Blocks.Logical.GreaterThan" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.GreaterThan"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.GreaterThan</H2>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.GreaterThanD.gif" ALT="ModelicaAdditions.Blocks.Logical.GreaterThan">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<I><TR><TD>threshold</TD><TD>0</TD><TD>comparision with respect to threshold</TD></TR>
+</I></TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model GreaterThan
+  extends <A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.Comparision"
+>Interfaces.Comparision</A>;
+equation
+  y = u &gt; threshold;
+end GreaterThan;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.GreaterEqualI.gif" ALT="ModelicaAdditions.Blocks.Logical.GreaterEqual" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.GreaterEqual"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.GreaterEqual</H2>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.GreaterEqualD.gif" ALT="ModelicaAdditions.Blocks.Logical.GreaterEqual">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<I><TR><TD>threshold</TD><TD>0</TD><TD>comparision with respect to threshold</TD></TR>
+</I></TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model GreaterEqual
+  extends <A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.Comparision"
+>Interfaces.Comparision</A>;
+equation
+  y = u &gt;= threshold;
+end GreaterEqual;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.LessThanI.gif" ALT="ModelicaAdditions.Blocks.Logical.LessThan" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.LessThan"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.LessThan</H2>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.LessThanD.gif" ALT="ModelicaAdditions.Blocks.Logical.LessThan">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<I><TR><TD>threshold</TD><TD>0</TD><TD>comparision with respect to threshold</TD></TR>
+</I></TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model LessThan
+  extends <A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.Comparision"
+>Interfaces.Comparision</A>;
+equation
+  y = u &lt; threshold;
+end LessThan;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.LessEqualI.gif" ALT="ModelicaAdditions.Blocks.Logical.LessEqual" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.LessEqual"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.LessEqual</H2>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.LessEqualD.gif" ALT="ModelicaAdditions.Blocks.Logical.LessEqual">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<I><TR><TD>threshold</TD><TD>0</TD><TD>comparision with respect to threshold</TD></TR>
+</I></TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model LessEqual
+  extends <A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.Comparision"
+>Interfaces.Comparision</A>;
+equation
+  y = u &lt;= threshold;
+end LessEqual;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Jun 20 22:13:49 2000
+.
+</address></BODY>
+</HTML>

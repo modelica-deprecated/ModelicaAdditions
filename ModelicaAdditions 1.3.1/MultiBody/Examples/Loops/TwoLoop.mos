@@ -1,0 +1,4 @@
+simulateModel("ModelicaAdditions.MultiBody.Examples.Loops.TwoLoop",0,1.6,200)
+plot({"j1.q","j1.qd"})
+
+

@@ -1,0 +1,593 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.Blocks.Multiplexer"></A><A HREF="ModelicaAdditions_Blocks.html#ModelicaAdditions.Blocks"
+>ModelicaAdditions.Blocks</A>.Multiplexer</H2>
+<B>Combine and split signal connectors of type Real</B>
+<P>
+<A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer.Multiplex2"
+><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex2I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex2" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer.Multiplex3"
+><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex3I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex3" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer.Multiplex4"
+><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex4I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex4" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer.Multiplex5"
+><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex5I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex5" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer.Multiplex6"
+><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex6I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex6" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer.DeMultiplex2"
+><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex2I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex2" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer.DeMultiplex3"
+><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex3I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex3" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer.DeMultiplex4"
+><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex4I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex4" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer.DeMultiplex5"
+><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex5I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex5" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer.DeMultiplex6"
+><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex6I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex6" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE>
+</PRE>
+<p>
+This package contains components to <b>combine</b> and <b>split</b> signal connectors
+of type <b>Real</b>.
+</p>
+
+<p>
+This package is not part of the Modelica standard library, because
+it is planned to have just one multiplexer and one demultiplexer
+element, once there is better support for vector connectors of
+unknown length in Modelica.
+</p>
+
+<dl>
+<dt><b>Main Author:</b>
+<dd><a href="http://www.op.dlr.de/~otter/">Martin Otter</a><br>
+    Deutsches Zentrum f&uuml;r Luft und Raumfahrt e.V. (DLR)<br>
+    Institut f&uuml;r Robotik und Mechatronik<br>
+    Postfach 1116<br>
+    D-82230 Wessling<br>
+    Germany<br>
+    email: <A HREF="mailto:Martin.Otter@dlr.de">Martin.Otter@dlr.de</A><br>
+</dl>
+<br>
+
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>June 14, 2000</i>
+       by <a href="http://www.op.dlr.de/~otter/">Martin Otter</a>:<br>
+       Realized based on an existing Dymola library of
+       Dieter Moormann.</li>
+</ul>
+<br>
+
+
+<p><b>Copyright (C) 2000, DLR.</b></p>
+
+<p><i>
+The ModelicaAdditions.Blocks.Multiplexer package is <b>free</b> software;
+it can be redistributed and/or modified
+under the terms of the <b>Modelica license</b>, see the license conditions
+and the accompanying <b>disclaimer</b> in the documentation of package
+Modelica in file "Modelica/package.mo".
+</i></p>
+<PRE>
+</PRE><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex2I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Multiplexer.Multiplex2"></A><A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer"
+>ModelicaAdditions.Blocks.Multiplexer</A>.Multiplex2</H2>
+<B>Multiplexer block for two input connectors</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex2D.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex2">
+<H3>Information</H3>
+<PRE></PRE>
+<p>
+The output connector is the <b>concatenation</b> of the two input connectors.
+Note, that the dimensions of the input connector signals have to be
+explicitly defined via parameters n1 and n2.
+</p>
+<PRE>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n1</TD><TD>1</TD><TD>dimension of input signal connector 1</TD></TR>
+<TR><TD>n2</TD><TD>1</TD><TD>dimension of input signal connector 2</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+block Multiplex2 &quot;Multiplexer block for two input connectors&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  parameter Integer n1=1 &quot;dimension of input signal connector 1&quot;;
+  parameter Integer n2=1 &quot;dimension of input signal connector 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort1(final n=n1)
+    &quot;Connector of Real input signals 1&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort2(final n=n2)
+    &quot;Connector of Real input signals 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(final n=n1 + n2)
+    &quot;Connector of Real output signals&quot;;
+equation
+  [outPort.signal] = [inPort1.signal; inPort2.signal];
+end Multiplex2;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex3I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex3" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Multiplexer.Multiplex3"></A><A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer"
+>ModelicaAdditions.Blocks.Multiplexer</A>.Multiplex3</H2>
+<B>Multiplexer block for three input connectors</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex3D.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex3">
+<H3>Information</H3>
+<PRE></PRE>
+<p>
+The output connector is the <b>concatenation</b> of the three input connectors.
+Note, that the dimensions of the input connector signals have to be
+explicitly defined via parameters n1, n2 and n3.
+<PRE>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n1</TD><TD>1</TD><TD>dimension of input signal connector 1</TD></TR>
+<TR><TD>n2</TD><TD>1</TD><TD>dimension of input signal connector 2</TD></TR>
+<TR><TD>n3</TD><TD>1</TD><TD>dimension of input signal connector 3</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+block Multiplex3 &quot;Multiplexer block for three input connectors&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  parameter Integer n1=1 &quot;dimension of input signal connector 1&quot;;
+  parameter Integer n2=1 &quot;dimension of input signal connector 2&quot;;
+  parameter Integer n3=1 &quot;dimension of input signal connector 3&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort1(final n=n1)
+    &quot;Connector of Real input signals 1&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort2(final n=n2)
+    &quot;Connector of Real input signals 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort3(final n=n3)
+    &quot;Connector of Real input signals 3&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(final n=n1 + n2 + n3)
+    &quot;Connector of Real output signals&quot;;
+equation
+  [outPort.signal] = [inPort1.signal; inPort2.signal; inPort3.signal];
+end Multiplex3;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex4I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex4" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Multiplexer.Multiplex4"></A><A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer"
+>ModelicaAdditions.Blocks.Multiplexer</A>.Multiplex4</H2>
+<B>Multiplexer block for four input connectors</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex4D.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex4">
+<H3>Information</H3>
+<PRE></PRE>
+<p>
+The output connector is the <b>concatenation</b> of the four input connectors.
+Note, that the dimensions of the input connector signals have to be
+explicitly defined via parameters n1, n2, n3 and n4.
+</p>
+<PRE>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n1</TD><TD>1</TD><TD>dimension of input signal connector 1</TD></TR>
+<TR><TD>n2</TD><TD>1</TD><TD>dimension of input signal connector 2</TD></TR>
+<TR><TD>n3</TD><TD>1</TD><TD>dimension of input signal connector 3</TD></TR>
+<TR><TD>n4</TD><TD>1</TD><TD>dimension of input signal connector 4</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+block Multiplex4 &quot;Multiplexer block for four input connectors&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  parameter Integer n1=1 &quot;dimension of input signal connector 1&quot;;
+  parameter Integer n2=1 &quot;dimension of input signal connector 2&quot;;
+  parameter Integer n3=1 &quot;dimension of input signal connector 3&quot;;
+  parameter Integer n4=1 &quot;dimension of input signal connector 4&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort1(final n=n1)
+    &quot;Connector of Real input signals 1&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort2(final n=n2)
+    &quot;Connector of Real input signals 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort3(final n=n3)
+    &quot;Connector of Real input signals 3&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort4(final n=n4)
+    &quot;Connector of Real input signals 4&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(final n=n1 + n2 + n3 + n4)
+    &quot;Connector of Real output signals&quot;;
+equation
+  [outPort.signal] = [inPort1.signal; inPort2.signal; inPort3.signal; inPort4.
+    signal];
+end Multiplex4;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex5I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex5" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Multiplexer.Multiplex5"></A><A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer"
+>ModelicaAdditions.Blocks.Multiplexer</A>.Multiplex5</H2>
+<B>Multiplexer block for five input connectors</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex5D.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex5">
+<H3>Information</H3>
+<PRE></PRE>
+<p>
+The output connector is the <b>concatenation</b> of the five input connectors.
+Note, that the dimensions of the input connector signals have to be
+explicitly defined via parameters n1, n2, n3, n4 and n5.
+</p>
+<PRE>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n1</TD><TD>1</TD><TD>dimension of input signal connector 1</TD></TR>
+<TR><TD>n2</TD><TD>1</TD><TD>dimension of input signal connector 2</TD></TR>
+<TR><TD>n3</TD><TD>1</TD><TD>dimension of input signal connector 3</TD></TR>
+<TR><TD>n4</TD><TD>1</TD><TD>dimension of input signal connector 4</TD></TR>
+<TR><TD>n5</TD><TD>1</TD><TD>dimension of input signal connector 5</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+block Multiplex5 &quot;Multiplexer block for five input connectors&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  parameter Integer n1=1 &quot;dimension of input signal connector 1&quot;;
+  parameter Integer n2=1 &quot;dimension of input signal connector 2&quot;;
+  parameter Integer n3=1 &quot;dimension of input signal connector 3&quot;;
+  parameter Integer n4=1 &quot;dimension of input signal connector 4&quot;;
+  parameter Integer n5=1 &quot;dimension of input signal connector 5&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort1(final n=n1)
+    &quot;Connector of Real input signals 1&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort2(final n=n2)
+    &quot;Connector of Real input signals 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort3(final n=n3)
+    &quot;Connector of Real input signals 3&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort4(final n=n4)
+    &quot;Connector of Real input signals 4&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort5(final n=n5)
+    &quot;Connector of Real input signals 5&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(final n=n1 + n2 + n3 + n4 + n5
+    ) &quot;Connector of Real output signals&quot;;
+equation
+  [outPort.signal] = [inPort1.signal; inPort2.signal; inPort3.signal; inPort4.
+    signal; inPort5.signal];
+end Multiplex5;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex6I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex6" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Multiplexer.Multiplex6"></A><A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer"
+>ModelicaAdditions.Blocks.Multiplexer</A>.Multiplex6</H2>
+<B>Multiplexer block for six input connectors</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Multiplexer.Multiplex6D.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.Multiplex6">
+<H3>Information</H3>
+<PRE></PRE>
+<p>
+The output connector is the <b>concatenation</b> of the six input connectors.
+Note, that the dimensions of the input connector signals have to be
+explicitly defined via parameters n1, n2, n3, n4, n5 and n6.
+</p>
+<PRE>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n1</TD><TD>1</TD><TD>dimension of input signal connector 1</TD></TR>
+<TR><TD>n2</TD><TD>1</TD><TD>dimension of input signal connector 2</TD></TR>
+<TR><TD>n3</TD><TD>1</TD><TD>dimension of input signal connector 3</TD></TR>
+<TR><TD>n4</TD><TD>1</TD><TD>dimension of input signal connector 4</TD></TR>
+<TR><TD>n5</TD><TD>1</TD><TD>dimension of input signal connector 5</TD></TR>
+<TR><TD>n6</TD><TD>1</TD><TD>dimension of input signal connector 6</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+block Multiplex6 &quot;Multiplexer block for six input connectors&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  parameter Integer n1=1 &quot;dimension of input signal connector 1&quot;;
+  parameter Integer n2=1 &quot;dimension of input signal connector 2&quot;;
+  parameter Integer n3=1 &quot;dimension of input signal connector 3&quot;;
+  parameter Integer n4=1 &quot;dimension of input signal connector 4&quot;;
+  parameter Integer n5=1 &quot;dimension of input signal connector 5&quot;;
+  parameter Integer n6=1 &quot;dimension of input signal connector 6&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort1(final n=n1)
+    &quot;Connector of Real input signals 1&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort2(final n=n2)
+    &quot;Connector of Real input signals 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort3(final n=n3)
+    &quot;Connector of Real input signals 3&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort4(final n=n4)
+    &quot;Connector of Real input signals 4&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort5(final n=n5)
+    &quot;Connector of Real input signals 5&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort6(final n=n6)
+    &quot;Connector of Real input signals 6&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(final n=n1 + n2 + n3 + n4 + n5
+         + n6) &quot;Connector of Real output signals&quot;;
+equation
+  [outPort.signal] = [inPort1.signal; inPort2.signal; inPort3.signal; inPort4.
+    signal; inPort5.signal; inPort6.signal];
+end Multiplex6;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex2I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex2"></A><A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer"
+>ModelicaAdditions.Blocks.Multiplexer</A>.DeMultiplex2</H2>
+<B>DeMultiplexer block for two output connectors</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex2D.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex2">
+<H3>Information</H3>
+<PRE></PRE>
+<p>
+The input connector is <b>splitted</b> up into two output connectors.
+Note, that the dimensions of the output connector signals have to be
+explicitly defined via parameters n1 and n2.
+</p>
+<PRE>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n1</TD><TD>1</TD><TD>dimension of output signal connector 1</TD></TR>
+<TR><TD>n2</TD><TD>1</TD><TD>dimension of output signal connector 2</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+block DeMultiplex2 &quot;DeMultiplexer block for two output connectors&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  parameter Integer n1=1 &quot;dimension of output signal connector 1&quot;;
+  parameter Integer n2=1 &quot;dimension of output signal connector 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(final n=n1 + n2)
+    &quot;Connector of Real input signals&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort1(final n=n1)
+    &quot;Connector of Real output signals 1&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort2(final n=n2)
+    &quot;Connector of Real output signals 2&quot;;
+equation
+  [inPort.signal] = [outPort1.signal; outPort2.signal];
+end DeMultiplex2;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex3I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex3" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex3"></A><A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer"
+>ModelicaAdditions.Blocks.Multiplexer</A>.DeMultiplex3</H2>
+<B>DeMultiplexer block for three output connectors</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex3D.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex3">
+<H3>Information</H3>
+<PRE></PRE>
+<p>
+The input connector is <b>splitted</b> up into three output connectors.
+Note, that the dimensions of the output connector signals have to be
+explicitly defined via parameters n1, n2 and n3.
+</p>
+<PRE>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n1</TD><TD>1</TD><TD>dimension of output signal connector 1</TD></TR>
+<TR><TD>n2</TD><TD>1</TD><TD>dimension of output signal connector 2</TD></TR>
+<TR><TD>n3</TD><TD>1</TD><TD>dimension of output signal connector 3</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+block DeMultiplex3 &quot;DeMultiplexer block for three output connectors&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  parameter Integer n1=1 &quot;dimension of output signal connector 1&quot;;
+  parameter Integer n2=1 &quot;dimension of output signal connector 2&quot;;
+  parameter Integer n3=1 &quot;dimension of output signal connector 3&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(final n=n1 + n2 + n3)
+    &quot;Connector of Real input signals&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort1(final n=n1)
+    &quot;Connector of Real output signals 1&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort2(final n=n2)
+    &quot;Connector of Real output signals 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort3(final n=n3)
+    &quot;Connector of Real output signals 3&quot;;
+equation
+  [inPort.signal] = [outPort1.signal; outPort2.signal; outPort3.signal];
+end DeMultiplex3;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex4I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex4" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex4"></A><A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer"
+>ModelicaAdditions.Blocks.Multiplexer</A>.DeMultiplex4</H2>
+<B>DeMultiplexer block for four output connectors</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex4D.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex4">
+<H3>Information</H3>
+<PRE></PRE>
+<p>
+The input connector is <b>splitted</b> up into four output connectors.
+Note, that the dimensions of the output connector signals have to be
+explicitly defined via parameters n1, n2, n3 and n4.
+<PRE>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n1</TD><TD>1</TD><TD>dimension of output signal connector 1</TD></TR>
+<TR><TD>n2</TD><TD>1</TD><TD>dimension of output signal connector 2</TD></TR>
+<TR><TD>n3</TD><TD>1</TD><TD>dimension of output signal connector 3</TD></TR>
+<TR><TD>n4</TD><TD>1</TD><TD>dimension of output signal connector 4</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+block DeMultiplex4 &quot;DeMultiplexer block for four output connectors&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  parameter Integer n1=1 &quot;dimension of output signal connector 1&quot;;
+  parameter Integer n2=1 &quot;dimension of output signal connector 2&quot;;
+  parameter Integer n3=1 &quot;dimension of output signal connector 3&quot;;
+  parameter Integer n4=1 &quot;dimension of output signal connector 4&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(final n=n1 + n2 + n3 + n4)
+    &quot;Connector of Real input signals&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort1(final n=n1)
+    &quot;Connector of Real output signals 1&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort2(final n=n2)
+    &quot;Connector of Real output signals 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort3(final n=n3)
+    &quot;Connector of Real output signals 3&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort4(final n=n4)
+    &quot;Connector of Real output signals 4&quot;;
+equation
+  [inPort.signal] = [outPort1.signal; outPort2.signal; outPort3.signal;
+    outPort4.signal];
+end DeMultiplex4;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex5I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex5" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex5"></A><A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer"
+>ModelicaAdditions.Blocks.Multiplexer</A>.DeMultiplex5</H2>
+<B>DeMultiplexer block for five output connectors</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex5D.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex5">
+<H3>Information</H3>
+<PRE></PRE>
+<p>
+The input connector is <b>splitted</b> up into five output connectors.
+Note, that the dimensions of the output connector signals have to be
+explicitly defined via parameters n1, n2, n3, n4 and n5.
+<PRE>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n1</TD><TD>1</TD><TD>dimension of output signal connector 1</TD></TR>
+<TR><TD>n2</TD><TD>1</TD><TD>dimension of output signal connector 2</TD></TR>
+<TR><TD>n3</TD><TD>1</TD><TD>dimension of output signal connector 3</TD></TR>
+<TR><TD>n4</TD><TD>1</TD><TD>dimension of output signal connector 4</TD></TR>
+<TR><TD>n5</TD><TD>1</TD><TD>dimension of output signal connector 5</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+block DeMultiplex5 &quot;DeMultiplexer block for five output connectors&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  parameter Integer n1=1 &quot;dimension of output signal connector 1&quot;;
+  parameter Integer n2=1 &quot;dimension of output signal connector 2&quot;;
+  parameter Integer n3=1 &quot;dimension of output signal connector 3&quot;;
+  parameter Integer n4=1 &quot;dimension of output signal connector 4&quot;;
+  parameter Integer n5=1 &quot;dimension of output signal connector 5&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(final n=n1 + n2 + n3 + n4 + n5)
+    &quot;Connector of Real input signals&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort1(final n=n1)
+    &quot;Connector of Real output signals 1&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort2(final n=n2)
+    &quot;Connector of Real output signals 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort3(final n=n3)
+    &quot;Connector of Real output signals 3&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort4(final n=n4)
+    &quot;Connector of Real output signals 4&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort5(final n=n5)
+    &quot;Connector of Real output signals 5&quot;;
+equation
+  [inPort.signal] = [outPort1.signal; outPort2.signal; outPort3.signal;
+    outPort4.signal; outPort5.signal];
+end DeMultiplex5;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex6I.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex6" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex6"></A><A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer"
+>ModelicaAdditions.Blocks.Multiplexer</A>.DeMultiplex6</H2>
+<B>DeMultiplexer block for six output connectors</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex6D.gif" ALT="ModelicaAdditions.Blocks.Multiplexer.DeMultiplex6">
+<H3>Information</H3>
+<PRE></PRE>
+<p>
+The input connector is <b>splitted</b> up into six output connectors.
+Note, that the dimensions of the output connector signals have to be
+explicitly defined via parameters n1, n2, n3, n4, n5 and n6.
+<PRE>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n1</TD><TD>1</TD><TD>dimension of output signal connector 1</TD></TR>
+<TR><TD>n2</TD><TD>1</TD><TD>dimension of output signal connector 2</TD></TR>
+<TR><TD>n3</TD><TD>1</TD><TD>dimension of output signal connector 3</TD></TR>
+<TR><TD>n4</TD><TD>1</TD><TD>dimension of output signal connector 4</TD></TR>
+<TR><TD>n5</TD><TD>1</TD><TD>dimension of output signal connector 5</TD></TR>
+<TR><TD>n6</TD><TD>1</TD><TD>dimension of output signal connector 6</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+block DeMultiplex6 &quot;DeMultiplexer block for six output connectors&quot;
+  extends <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  parameter Integer n1=1 &quot;dimension of output signal connector 1&quot;;
+  parameter Integer n2=1 &quot;dimension of output signal connector 2&quot;;
+  parameter Integer n3=1 &quot;dimension of output signal connector 3&quot;;
+  parameter Integer n4=1 &quot;dimension of output signal connector 4&quot;;
+  parameter Integer n5=1 &quot;dimension of output signal connector 5&quot;;
+  parameter Integer n6=1 &quot;dimension of output signal connector 6&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(final n=n1 + n2 + n3 + n4 + n5
+         + n6) &quot;Connector of Real input signals&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort1(final n=n1)
+    &quot;Connector of Real output signals 1&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort2(final n=n2)
+    &quot;Connector of Real output signals 2&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort3(final n=n3)
+    &quot;Connector of Real output signals 3&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort4(final n=n4)
+    &quot;Connector of Real output signals 4&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort5(final n=n5)
+    &quot;Connector of Real output signals 5&quot;;
+  <A HREF="../../modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort6(final n=n6)
+    &quot;Connector of Real output signals 6&quot;;
+equation
+  [inPort.signal] = [outPort1.signal; outPort2.signal; outPort3.signal;
+    outPort4.signal; outPort5.signal; outPort6.signal];
+end DeMultiplex6;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Jun 20 22:14:25 2000
+.
+</address></BODY>
+</HTML>

@@ -1,0 +1,881 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.MultiBody.Parts"></A><A HREF="ModelicaAdditions_MultiBody.html#ModelicaAdditions.MultiBody"
+>ModelicaAdditions.MultiBody</A>.Parts</H2>
+<B>Parts with and without mass for 3D mechanical components</B>
+<P>
+<A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.InertialSystem"
+><IMG SRC="ModelicaAdditions.MultiBody.Parts.InertialSystemI.gif" ALT="ModelicaAdditions.MultiBody.Parts.InertialSystem" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.FrameTranslation"
+><IMG SRC="ModelicaAdditions.MultiBody.Parts.FrameTranslationI.gif" ALT="ModelicaAdditions.MultiBody.Parts.FrameTranslation" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.FrameRotation"
+><IMG SRC="ModelicaAdditions.MultiBody.Parts.FrameRotationI.gif" ALT="ModelicaAdditions.MultiBody.Parts.FrameRotation" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.FrameAxes"
+><IMG SRC="ModelicaAdditions.MultiBody.Parts.FrameAxesI.gif" ALT="ModelicaAdditions.MultiBody.Parts.FrameAxes" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.FrameAngles"
+><IMG SRC="ModelicaAdditions.MultiBody.Parts.FrameAnglesI.gif" ALT="ModelicaAdditions.MultiBody.Parts.FrameAngles" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.Body"
+><IMG SRC="ModelicaAdditions.MultiBody.Parts.BodyI.gif" ALT="ModelicaAdditions.MultiBody.Parts.Body" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.Body2"
+><IMG SRC="ModelicaAdditions.MultiBody.Parts.Body2I.gif" ALT="ModelicaAdditions.MultiBody.Parts.Body2" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.BoxBody"
+><IMG SRC="ModelicaAdditions.MultiBody.Parts.BoxBodyI.gif" ALT="ModelicaAdditions.MultiBody.Parts.BoxBody" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.CylinderBody"
+><IMG SRC="ModelicaAdditions.MultiBody.Parts.CylinderBodyI.gif" ALT="ModelicaAdditions.MultiBody.Parts.CylinderBody" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.ShapeBody"
+><IMG SRC="ModelicaAdditions.MultiBody.Parts.ShapeBodyI.gif" ALT="ModelicaAdditions.MultiBody.Parts.ShapeBody" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.Shape"
+><IMG SRC="ModelicaAdditions.MultiBody.Parts.ShapeI.gif" ALT="ModelicaAdditions.MultiBody.Parts.Shape" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE>
+</PRE>
+<p>
+This package contains the inertial system and elements
+which have mass and inertia.
+</p>
+
+
+<dl>
+<dt><b>Main Author:</b>
+<dd><a href="http://www.op.dlr.de/~otter/">Martin Otter</a><br>
+    Deutsches Zentrum f&uuml;r Luft und Raumfahrt e.V. (DLR)<br>
+    Institut f&uuml;r Robotik und Mechatronik<br>
+    Postfach 1116<br>
+    D-82230 Wessling<br>
+    Germany<br>
+    email: <A HREF="mailto:Martin.Otter@dlr.de">Martin.Otter@dlr.de</A><br>
+</dl>
+<br>
+
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>April 5, 2000</i>
+       by <a href="http://www.op.dlr.de/~otter/">Martin Otter</a>:<br>
+       Realized.</li>
+</ul>
+<br>
+
+<p><b>Copyright (C) 2000, DLR.</b></p>
+
+<p><i>
+The Modelica package is <b>free</b> software; it can be redistributed and/or modified
+under the terms of the <b>Modelica license</b>, see the license conditions
+and the accompanying <b>disclaimer</b> in the documentation of package
+Modelica in file "Modelica/package.mo".
+</i></p>
+<PRE>
+</PRE><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Parts.InertialSystemI.gif" ALT="ModelicaAdditions.MultiBody.Parts.InertialSystem" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Parts.InertialSystem"></A><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>.InertialSystem</H2>
+<B>Inertial system</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Parts.InertialSystemD.gif" ALT="ModelicaAdditions.MultiBody.Parts.InertialSystem">
+<H3>Information</H3>
+<PRE>
+An instance of this class defines a coordinate system: the inertial
+frame. All parameter vectors and tensors (e.g. position vectors)
+are given in the home position of the multibody system with respect
+to the inertial frame.
+
+One instance of class  InertialSystem  MUST always be present for every
+multibody model.
+
+In order to identify the desired axes of the used inertial frame in
+the icon, the labels of the two axes can be defined as string parameters.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>g</TD><TD>9.81</TD><TD>Gravity constant [m/s2]</TD></TR>
+<TR><TD>ng[3]</TD><TD>{0,-1,0}</TD><TD>Direction of gravity (gravity = g*ng)</TD></TR>
+<TR><TD>label1</TD><TD>&quot;x&quot;</TD><TD>Label of horizontal axis in icon</TD></TR>
+<TR><TD>label2</TD><TD>&quot;y&quot;</TD><TD>Label of vertical axis in icon</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model InertialSystem &quot;Inertial system&quot;
+  parameter SIunits.Acceleration g=9.81 &quot;Gravity constant&quot;;
+  parameter Real ng[3]={0,-1,0}
+    &quot;Direction of gravity (gravity = g*ng)&quot;;
+  parameter String label1=&quot;x&quot;
+    &quot;Label of horizontal axis in icon&quot;;
+  parameter String label2=&quot;y&quot;
+    &quot;Label of vertical axis in icon&quot;;
+  SIunits.Acceleration gravity[3] &quot;Gravity acceleration vector&quot;;
+  <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.Frame_b"
+>MultiBody.Interfaces.Frame_b</A> frame_b;
+equation
+  gravity = g*ng;
+  <I></I>
+  <I>/*Equations*/</I>
+  frame_b.S = identity(3);
+  frame_b.r0 = zeros(3);
+  frame_b.v = zeros(3);
+  frame_b.w = zeros(3);
+  frame_b.a = -gravity;
+  frame_b.z = zeros(3);
+end InertialSystem;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Parts.BoxBodyI.gif" ALT="ModelicaAdditions.MultiBody.Parts.BoxBody" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Parts.BoxBody"></A><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>.BoxBody</H2>
+<B>Rigid body with box shape (also used for animation)</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Parts.BoxBodyD.gif" ALT="ModelicaAdditions.MultiBody.Parts.BoxBody">
+<H3>Information</H3>
+<PRE>
+Rigid body with  box  shape. The mass properties of the body are computed
+from the box data. Optionally, the box may be hollow.
+The (outer) box shape is automatically used in animation.
+
+Parameter vectors are defined with respect to frame_a in [m].
+
+Parameters:
+  r(3)       : Position vector from the origin of frame_a to the
+               origin of frame_b.
+  r0(3)      : Position vector from frame_a to the mid-point of the  left
+               box plane.
+  LengthDirection(3): Unit vector in direction of length (will be normalized).
+  WidthDirection(3) : Unit vector in direction of width (will be normalized).
+  Length     : Length of box in [m].
+  Width      : Width of box in [m].
+  Height     : Height of box in direction of a vector which is
+               orthogonal to  LengthDirection  and  WidthDirection  in [m].
+  InnerWidth : Width of inner box surface in [m] (0 &lt;= InnerWidth &lt; Width).
+  InnerHeight: Height of inner box surface in [m] (0 &lt;= InnerHeight &lt; Height).
+  rho        : Density of material in [g/cm^3], e.g.
+                    steel: 7.7 .. 7.9
+                    wood : 0.4 .. 0.8
+  Material(4): = [r g b specular].
+               Color and specular coefficient of the box.
+               [r,g,b] affects the color of diffuse and ambient reflected
+               light. Specular is a coefficient defining white specular
+               reflection. What color that is reflected also depends on the
+               color of the light sources. Note, r g, b and specular are
+               given in the range 0-1. Specular=1 gives a metallic appearance.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>r[3]</TD><TD>{0.1,0,0}</TD><TD>Vector from frame_a to frame_b, resolved in frame_a [m]</TD></TR>
+<TR><TD>r0[3]</TD><TD>{0,0,0}</TD><TD>Vector from frame_a to left box plane, resolved in frame_a [m]</TD></TR>
+<TR><TD>LengthDirection[3]</TD><TD>r - r0</TD><TD>Vector in length direction, resolved in frame_a [m]</TD></TR>
+<TR><TD>WidthDirection[3]</TD><TD>{0,1,0}</TD><TD>Vector in width direction, resolved in frame_a [m]</TD></TR>
+<TR><TD>Length</TD><TD>(sqrt((r - r0)*(r - r0)))</TD><TD>Length of box [m]</TD></TR>
+<TR><TD>Width</TD><TD>0.1</TD><TD>Width of box [m]</TD></TR>
+<TR><TD>Height</TD><TD>0.1</TD><TD>Height of box [m]</TD></TR>
+<TR><TD>InnerWidth</TD><TD>0</TD><TD>Width of inner box surface [m]</TD></TR>
+<TR><TD>InnerHeight</TD><TD>0</TD><TD>Height of inner box surface [m]</TD></TR>
+<TR><TD>rho</TD><TD>7.7</TD><TD>Density of box material [g/cm^3]</TD></TR>
+<TR><TD>Material[4]</TD><TD>{1,0,0,0.5}</TD><TD>Color and specular coefficient</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model BoxBody &quot;Rigid body with box shape (also used for animation)&quot;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.TwoTreeFrames"
+>MultiBody.Interfaces.TwoTreeFrames</A>;
+  parameter SIunits.Position r[3]={0.1,0,0}
+    &quot;Vector from frame_a to frame_b, resolved in frame_a&quot;;
+  parameter SIunits.Position r0[3]={0,0,0}
+    &quot;Vector from frame_a to left box plane, resolved in frame_a&quot;;
+  parameter SIunits.Position LengthDirection[3]=r - r0
+    &quot;Vector in length direction, resolved in frame_a&quot;;
+  parameter SIunits.Position WidthDirection[3]={0,1,0}
+    &quot;Vector in width direction, resolved in frame_a&quot;;
+  parameter SIunits.Length Length=(sqrt((r - r0)*(r - r0)))
+    &quot;Length of box&quot;;
+  parameter SIunits.Length Width=0.1 &quot;Width of box&quot;;
+  parameter SIunits.Length Height=0.1 &quot;Height of box&quot;;
+  parameter SIunits.Length InnerWidth=0 &quot;Width of inner box surface&quot;
+    ;
+  parameter SIunits.Length InnerHeight=0
+    &quot;Height of inner box surface&quot;;
+  parameter Real rho=7.7 &quot;Density of box material [g/cm^3]&quot;;
+  parameter Real Material[4]={1,0,0,0.5}
+    &quot;Color and specular coefficient&quot;;
+  SIunits.Mass mo;
+  SIunits.Mass mi;
+  Real Sbox[3, 3];
+  SIunits.Length l;
+  SIunits.Length w;
+  SIunits.Length h;
+  SIunits.Length wi;
+  SIunits.Length hi;
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.FrameTranslation"
+>FrameTranslation</A> frameTranslation(r=r);
+  <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.BodyBase"
+>MultiBody.Interfaces.BodyBase</A> body;
+  VisualShape box(
+    Shape=&quot;box&quot;,
+    r0=r0,
+    LengthDirection=LengthDirection,
+    WidthDirection=WidthDirection,
+    Length=Length,
+    Width=Width,
+    Height=Height,
+    Material=Material);
+equation
+  connect(body.frame_a, frame_a);
+  connect(frame_a, frameTranslation.frame_a);
+  connect(frameTranslation.frame_b, frame_b);
+  box.S = Sa;
+  box.r = r0a;
+  box.Sshape = Sbox;
+  <I></I>
+  l = Length;
+  w = Width;
+  h = Height;
+  wi = InnerWidth;
+  hi = InnerHeight;
+  <I></I>
+  <I>/*Mass properties of box*/</I>
+  mo = 1000*rho*l*w*h;
+  mi = 1000*rho*l*wi*hi;
+  body.m = mo - mi;
+  body.rCM = r0 + l/2*box.nLength;
+  body.I = Sbox*diagonal({mo*(w*w + h*h) - mi*(wi*wi + hi*hi),mo*(l*l + h*h)
+     - mi*(l*l + hi*hi),mo*(l*l + w*w) - mi*(l*l + wi*wi)}/12)*transpose(Sbox);
+end BoxBody;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Parts.FrameTranslationI.gif" ALT="ModelicaAdditions.MultiBody.Parts.FrameTranslation" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Parts.FrameTranslation"></A><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>.FrameTranslation</H2>
+<B>Fixed translation of frame_b with respect to frame_a</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Parts.FrameTranslationD.gif" ALT="ModelicaAdditions.MultiBody.Parts.FrameTranslation">
+<H3>Information</H3>
+<PRE>
+Fixed translation of frame_b with respect to frame_a, i.e.,
+the frames of connectors a and b are parallel to each other.
+
+Parameters:
+  r: Position vector from the origin of (connector) frame_a to the origin of
+     (connector) frame_b, resolved in frame_a in [m].
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>r[3]</TD><TD>{0,0,0}</TD><TD>Vector from frame_a to frame_b resolved in frame_a [m]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model FrameTranslation
+  &quot;Fixed translation of frame_b with respect to frame_a&quot;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.TwoTreeFrames"
+>MultiBody.Interfaces.TwoTreeFrames</A>;
+  parameter SIunits.Position r[3]={0,0,0}
+    &quot;Vector from frame_a to frame_b resolved in frame_a&quot;;
+protected
+  SIunits.Velocity vaux[3];
+equation
+  Sb = Sa;
+  wb = wa;
+  zb = za;
+  <I></I>
+  r0b = r0a + Sa*r;
+  vaux = cross(wa, r);
+  vb = va + vaux;
+  ab = aa + cross(za, r) + cross(wa, vaux);
+  <I></I>
+  <I>/*Transform the force and torque acting at frame_b to frame_a*/</I>
+  fa = fb;
+  ta = tb + cross(r, fa);
+end FrameTranslation;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Parts.FrameRotationI.gif" ALT="ModelicaAdditions.MultiBody.Parts.FrameRotation" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Parts.FrameRotation"></A><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>.FrameRotation</H2>
+<B>Fixed translation and planar rotation of frame_b with respect to frame_a</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Parts.FrameRotationD.gif" ALT="ModelicaAdditions.MultiBody.Parts.FrameRotation">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<I><TR><TD>r[3]</TD><TD>{0,0,0}</TD><TD>Vector from frame_a to frame_b resolved in frame_a [m]</TD></TR>
+</I><TR><TD>n[3]</TD><TD>{1,0,0}</TD><TD>Axis of rotation in frame_a and in frame_b</TD></TR>
+<TR><TD>angle</TD><TD>0</TD><TD>Rotation angle in [deg]</TD></TR>
+<TR><TD>label1</TD><TD>&quot;x&quot;</TD><TD>Label of horizontal axis in icon</TD></TR>
+<TR><TD>label2</TD><TD>&quot;y&quot;</TD><TD>Label of vertical axis in icon</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model FrameRotation
+  &quot;Fixed translation and planar rotation of frame_b with respect to frame_a&quot;
+
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.FrameBase"
+>MultiBody.Interfaces.FrameBase</A>;
+  parameter Real n[3]={1,0,0}
+    &quot;Axis of rotation in frame_a and in frame_b&quot;;
+  parameter Real angle=0 &quot;Rotation angle in [deg]&quot;;
+  parameter String label1=&quot;x&quot;
+    &quot;Label of horizontal axis in icon&quot;;
+  parameter String label2=&quot;y&quot;
+    &quot;Label of vertical axis in icon&quot;;
+protected
+  Real nn[3];
+  SIunits.Angle angleRad;
+  constant Real pi=Modelica.Constants.pi;
+equation
+  nn = n/sqrt(n*n);
+  angleRad = angle*pi/180;
+  S_rel = MultiBody.Interfaces.planarRotation(nn, angleRad);
+end FrameRotation;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Parts.FrameAxesI.gif" ALT="ModelicaAdditions.MultiBody.Parts.FrameAxes" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Parts.FrameAxes"></A><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>.FrameAxes</H2>
+<B>Fixed translation and rotation of frame_b with respect to frame_a</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Parts.FrameAxesD.gif" ALT="ModelicaAdditions.MultiBody.Parts.FrameAxes">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<I><TR><TD>r[3]</TD><TD>{0,0,0}</TD><TD>Vector from frame_a to frame_b resolved in frame_a [m]</TD></TR>
+</I><TR><TD>nx[3]</TD><TD>{1,0,0}</TD><TD>x-axis of frame_b resolved in frame_a</TD></TR>
+<TR><TD>ny[3]</TD><TD>{0,1,0}</TD><TD>y-axis of frame_b resolved in frame_a</TD></TR>
+<TR><TD>label1</TD><TD>&quot;x&quot;</TD><TD>Label of horizontal axis in icon</TD></TR>
+<TR><TD>label2</TD><TD>&quot;y&quot;</TD><TD>Label of vertical axis in icon</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model FrameAxes
+  &quot;Fixed translation and rotation of frame_b with respect to frame_a&quot;
+
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.FrameBase"
+>MultiBody.Interfaces.FrameBase</A>;
+  parameter Real nx[3]={1,0,0}
+    &quot;x-axis of frame_b resolved in frame_a&quot;;
+  parameter Real ny[3]={0,1,0}
+    &quot;y-axis of frame_b resolved in frame_a&quot;;
+  parameter String label1=&quot;x&quot;
+    &quot;Label of horizontal axis in icon&quot;;
+  parameter String label2=&quot;y&quot;
+    &quot;Label of vertical axis in icon&quot;;
+protected
+  Real nz[3];
+  Real nnx[3];
+  Real nny[3];
+  Real nnz[3];
+equation
+  nz = cross(nx, ny);
+  nnz = nz/sqrt(nz*nz);
+  nnx = nx/sqrt(nx*nx);
+  nny = cross(nnz, nnx);
+  S_rel = transpose([nnx, nny, nnz]);
+end FrameAxes;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Parts.FrameAnglesI.gif" ALT="ModelicaAdditions.MultiBody.Parts.FrameAngles" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Parts.FrameAngles"></A><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>.FrameAngles</H2>
+<B>Fixed translation and elementary rotations of frame_b with respect to frame_a</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Parts.FrameAnglesD.gif" ALT="ModelicaAdditions.MultiBody.Parts.FrameAngles">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<I><TR><TD>r[3]</TD><TD>{0,0,0}</TD><TD>Vector from frame_a to frame_b resolved in frame_a [m]</TD></TR>
+</I><TR><TD>sequence[3]</TD><TD>{1,2,3}</TD><TD>Sequence of rotations</TD></TR>
+<TR><TD>angles[3]</TD><TD>{0,0,0}</TD><TD>Rotation angles around axes defined in sequence in [deg]</TD></TR>
+<TR><TD>label1</TD><TD>&quot;x&quot;</TD><TD>Label of horizontal axis in icon</TD></TR>
+<TR><TD>label2</TD><TD>&quot;y&quot;</TD><TD>Label of vertical axis in icon</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model FrameAngles
+  &quot;Fixed translation and elementary rotations of frame_b with respect to frame_a&quot;
+
+  <I></I>
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.FrameBase"
+>MultiBody.Interfaces.FrameBase</A>;
+  parameter Integer sequence[3](
+    min={1,1,1},
+    max={3,3,3}) = {1,2,3} &quot;Sequence of rotations&quot;;
+  parameter Real angles[3]={0,0,0}
+    &quot;Rotation angles around axes defined in sequence in [deg]&quot;;
+  parameter String label1=&quot;x&quot;
+    &quot;Label of horizontal axis in icon&quot;;
+  parameter String label2=&quot;y&quot;
+    &quot;Label of vertical axis in icon&quot;;
+protected
+  parameter SIunits.Angle anglesRad[3]=angles*Modelica.Constants.pi/180.;
+equation
+  S_rel = MultiBody.Interfaces.axisRotation(sequence[3], anglesRad[3])*
+    MultiBody.Interfaces.axisRotation(sequence[2], anglesRad[2])*
+    MultiBody.Interfaces.axisRotation(sequence[1], anglesRad[1]);
+end FrameAngles;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Parts.BodyI.gif" ALT="ModelicaAdditions.MultiBody.Parts.Body" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Parts.Body"></A><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>.Body</H2>
+<B>Rigid body with one cut</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Parts.BodyD.gif" ALT="ModelicaAdditions.MultiBody.Parts.Body">
+<H3>Information</H3>
+<PRE>
+Rigid body with one cut. All the mass and inertia properties must be
+supplied with respect to the center of mass.
+
+Parameters:
+  rCM(3): Position vector from the origin of frame_a to the center of
+          mass, resolved in frame_a in [m].
+  m     : Mass of body in [kg].
+  Ixy   : Elements (x,y) of the inertia tensor of the body with respect to
+          the center of mass, resolved in frame_a in [kgm^2].
+          The following elements can be defined:
+          I11, I22, I33, I21, I31, I32.
+          (Move the inertial from into the center of mass by translation
+          and resolve the inertia tensor in this frame).
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>rCM[3]</TD><TD>{0,0,0}</TD><TD>Vector from frame_a to center of mass, resolved in frame_a [m]</TD></TR>
+<TR><TD>m</TD><TD>0</TD><TD>Mass of body [kg] [kg]</TD></TR>
+<TR><TD>I11</TD><TD>0</TD><TD>(1,1) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I22</TD><TD>0</TD><TD>(2,2) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I33</TD><TD>0</TD><TD>(3,3) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I21</TD><TD>0</TD><TD>(2,1) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I31</TD><TD>0</TD><TD>(3,1) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I32</TD><TD>0</TD><TD>(3,2) element of inertia tensor [kg.m2]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model Body &quot;Rigid body with one cut&quot;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.OneFrame_a"
+>MultiBody.Interfaces.OneFrame_a</A>;
+  parameter SIunits.Position rCM[3]={0,0,0}
+    &quot;Vector from frame_a to center of mass, resolved in frame_a&quot;;
+  parameter SIunits.Mass m=0 &quot;Mass of body [kg]&quot;;
+  parameter SIunits.Inertia I11=0 &quot;(1,1) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I22=0 &quot;(2,2) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I33=0 &quot;(3,3) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I21=0 &quot;(2,1) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I31=0 &quot;(3,1) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I32=0 &quot;(3,2) element of inertia tensor&quot;;
+  <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.BodyBase"
+>MultiBody.Interfaces.BodyBase</A> body;
+equation
+  connect(frame_a, body.frame_a);
+  body.m = m;
+  body.rCM = rCM;
+  body.I = [I11, I21, I31; I21, I22, I32; I31, I32, I33];
+end Body;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Parts.Body2I.gif" ALT="ModelicaAdditions.MultiBody.Parts.Body2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Parts.Body2"></A><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>.Body2</H2>
+<B>Rigid body with two cuts</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Parts.Body2D.gif" ALT="ModelicaAdditions.MultiBody.Parts.Body2">
+<H3>Information</H3>
+<PRE>
+Rigid body with two frames. All the mass and inertia properties must be
+supplied with respect to the center of mass. All parameter vectors
+have to be resolved in frame_a in [m].
+
+Parameters:
+  r(3)  : Position vector from the origin of frame_a to the origin of
+          frame_b.
+  rCM(3): Position vector from the origin of frame_a to the center of
+          mass.
+  m     : Mass of body in [kg].
+  Ixy   : Elements (x,y) of the inertia tensor of the body with respect to
+          the center of mass, resolved frame_a in [kgm^2].
+          The following elements can be defined:
+          I11, I22, I33, I21, I31, I32.
+          (Move the inertial from into the center of mass by translation
+          and resolve the inertia tensor in this frame).
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>r[3]</TD><TD>{0,0,0}</TD><TD>Vector from frame_a to frame_b, resolved in frame_a [m]</TD></TR>
+<TR><TD>rCM[3]</TD><TD>{0,0,0}</TD><TD>Vector from frame_a to center of mass, resolved in frame_a [m]</TD></TR>
+<TR><TD>m</TD><TD>0</TD><TD>Mass of body [kg]</TD></TR>
+<TR><TD>I11</TD><TD>0</TD><TD>(1,1) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I22</TD><TD>0</TD><TD>(2,2) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I33</TD><TD>0</TD><TD>(3,3) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I21</TD><TD>0</TD><TD>(2,1) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I31</TD><TD>0</TD><TD>(3,1) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I32</TD><TD>0</TD><TD>(3,2) element of inertia tensor [kg.m2]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model Body2 &quot;Rigid body with two cuts&quot;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.TwoTreeFrames"
+>MultiBody.Interfaces.TwoTreeFrames</A>;
+  parameter SIunits.Position r[3]={0,0,0}
+    &quot;Vector from frame_a to frame_b, resolved in frame_a&quot;;
+  parameter SIunits.Position rCM[3]={0,0,0}
+    &quot;Vector from frame_a to center of mass, resolved in frame_a&quot;;
+  parameter SIunits.Mass m=0 &quot;Mass of body&quot;;
+  parameter SIunits.Inertia I11=0 &quot;(1,1) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I22=0 &quot;(2,2) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I33=0 &quot;(3,3) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I21=0 &quot;(2,1) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I31=0 &quot;(3,1) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I32=0 &quot;(3,2) element of inertia tensor&quot;;
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.FrameTranslation"
+>FrameTranslation</A> frameTranslation(r=r);
+  <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.BodyBase"
+>MultiBody.Interfaces.BodyBase</A> body;
+equation
+  connect(frame_a, frameTranslation.frame_a);
+  connect(frame_b, frameTranslation.frame_b);
+  connect(frame_a, body.frame_a);
+  body.m = m;
+  body.rCM = rCM;
+  body.I = [I11, I21, I31; I21, I22, I32; I31, I32, I33];
+end Body2;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Parts.CylinderBodyI.gif" ALT="ModelicaAdditions.MultiBody.Parts.CylinderBody" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Parts.CylinderBody"></A><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>.CylinderBody</H2>
+<B>Rigid body with cylindrical shape (also used for animation)</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Parts.CylinderBodyD.gif" ALT="ModelicaAdditions.MultiBody.Parts.CylinderBody">
+<H3>Information</H3>
+<PRE>
+Rigid body with  cylindrical  shape. The mass properties of the body are
+computed from the cylinder data. Optionally, the cylinder may be hollow.
+The pipe shape is automatically used in animation.
+
+Parameter vectors are defined with respect to frame_a in [m].
+
+Parameters:
+  r(3)       : Position vector from the origin of frame_a to the origin of
+               frame_b.
+  r0(3)      : Position vector from the origin of frame_a to the center
+               of the  left  cylinder circle.
+  Axis(3)    : Unit vector in direction of the cylinder axis
+               (will be normalized)
+  Length     : Length of cylinder in [m].
+  Radius     : Radius of cylinder in [m].
+  InnerRadius: Inner radius of cylinder in [m].
+  rho        : Density of material in [g/cm^3], e.g.
+                  steel: 7.7 .. 7.9
+                  wood : 0.4 .. 0.8
+  Material(4): = [r g b specular].
+               Color and specular coefficient of the box.
+               [r,g,b] affects the color of diffuse and ambient reflected
+               light. Specular is a coefficient defining white specular
+               reflection. What color that is reflected also depends on the
+               color of the light sources. Note, r g, b and specular are
+               given in the range 0-1. Specular=1 gives a metallic appearance.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>r[3]</TD><TD>{0.2,0,0}</TD><TD>Vector from frame_a to frame_b, resolved in frame_a [m]</TD></TR>
+<TR><TD>r0[3]</TD><TD>{0,0,0}</TD><TD>Vector from frame_a to left circle center, resolved in frame_a [m]</TD></TR>
+<TR><TD>Axis[3]</TD><TD>r - r0</TD><TD>Vector in direction of cylinder axis, resolved in frame_a [m]</TD></TR>
+<TR><TD>Length</TD><TD>(sqrt(Axis*Axis))</TD><TD>Length of cylinder [m]</TD></TR>
+<TR><TD>Radius</TD><TD>0.1</TD><TD>Radius of cylinder [m]</TD></TR>
+<TR><TD>InnerRadius</TD><TD>0</TD><TD>Inner radius of cylinder [m]</TD></TR>
+<TR><TD>rho</TD><TD>7.7</TD><TD>Density of material [g/cm^3]</TD></TR>
+<TR><TD>Material[4]</TD><TD>{1,0,0,0.5}</TD><TD>Color and specular coefficient</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model CylinderBody
+  &quot;Rigid body with cylindrical shape (also used for animation)&quot;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.TwoTreeFrames"
+>MultiBody.Interfaces.TwoTreeFrames</A>;
+  parameter SIunits.Position r[3]={0.2,0,0}
+    &quot;Vector from frame_a to frame_b, resolved in frame_a&quot;;
+  parameter SIunits.Position r0[3]={0,0,0}
+    &quot;Vector from frame_a to left circle center, resolved in frame_a&quot;;
+  parameter SIunits.Position Axis[3]=r - r0
+    &quot;Vector in direction of cylinder axis, resolved in frame_a&quot;;
+  parameter SIunits.Length Length=(sqrt(Axis*Axis))
+    &quot;Length of cylinder&quot;;
+  parameter SIunits.Length Radius=0.1 &quot;Radius of cylinder&quot;;
+  parameter SIunits.Length InnerRadius=0 &quot;Inner radius of cylinder&quot;;
+  parameter Real rho=7.7 &quot;Density of material [g/cm^3]&quot;;
+  parameter Real Material[4]={1,0,0,0.5}
+    &quot;Color and specular coefficient&quot;;
+  Real Scyl[3, 3];
+  SIunits.Mass mo;
+  SIunits.Mass mi;
+  SIunits.Inertia I22;
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.FrameTranslation"
+>FrameTranslation</A> frameTranslation(r=r);
+  <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.BodyBase"
+>MultiBody.Interfaces.BodyBase</A> body;
+  VisualShape box(
+    r0=r0,
+    Length=Length,
+    Width=Radius,
+    Height=Radius,
+    LengthDirection=Axis,
+    WidthDirection={0,1,0},
+    Shape=&quot;pipe&quot;,
+    Material=Material,
+    Extra=InnerRadius);
+equation
+  connect(frame_a, body.frame_a);
+  connect(frame_a, frameTranslation.frame_a);
+  connect(frameTranslation.frame_b, frame_b);
+  box.S = Sa;
+  box.r = r0a;
+  box.Sshape = Scyl;
+  <I></I>
+  <I>/*Mass properties of cylinder*/</I>
+  mo = 1000*rho*PI*Length*Radius*Radius;
+  mi = 1000*rho*PI*Length*InnerRadius*InnerRadius;
+  I22 = (mo*(Length*Length + 3*Radius*Radius) - mi*(Length*Length + 3*
+    InnerRadius*InnerRadius))/12;
+  body.m = mo - mi;
+  body.rCM = r0 + Length/2*box.nLength;
+  body.I = Scyl*diagonal({(mo*Radius*Radius - mi*InnerRadius*InnerRadius)/2,
+    I22,I22})*transpose(Scyl);
+end CylinderBody;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Parts.ShapeBodyI.gif" ALT="ModelicaAdditions.MultiBody.Parts.ShapeBody" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Parts.ShapeBody"></A><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>.ShapeBody</H2>
+<B>Rigid body with visual shape (also used for animation)</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Parts.ShapeBodyD.gif" ALT="ModelicaAdditions.MultiBody.Parts.ShapeBody">
+<H3>Information</H3>
+<PRE>
+Rigid body with two cuts and an additional shape used in animation.
+All the mass and inertia properties must be supplied with respect
+to the center of mass. All parameter vectors are resolved in frame_a
+in [m].
+
+Parameters:
+  r(3)         : Position vector from the origin of frame_a to the origin of
+                 frame_b.
+  rCM(3)       : Position vector from the origin of frame_a to the center of
+                 mass.
+  m            : Mass of body in [kg].
+  Ixy          : Elements (x,y) of the inertia tensor of the body with respect to
+                 the center of mass, resolved in the inertial frame in the home
+                 position in [kgm^2]. The following elements can be defined:
+                 I11, I22, I33, I21, I31, I32.
+                 (Move the inertial from into the center of mass by translation
+                 and resolve the inertia tensor in this frame).
+
+  Shape        : Type of visual shape. Predefined shapes are
+                   shape =  box
+                            sphere
+                            cylinder
+                            cone
+                            pipe
+                            beam
+                            wirebox
+                 External shapes are specified as DXF-files. Only external shape
+                 names like  1 ,  2  etc. are supported. The corresponding
+                 definitions should be in files '1.dxf', '2.dxf' etc.
+  r0(3)        : Position vector from the origin of frame_a to the origin
+                 of the visual object.
+  LengthDirection(3): Unit vector in direction of length (will be normalized).
+  WidthDirection(3) : Unit vector in direction of width (will be normalized).
+  Length       : Length of visual shape in [m].
+  Width        : Width of visual shape in [m].
+  Height       : Height of visual shape in direction of a vector which is
+                 orthogonal to  LengthDirection  and  WidthDirection .
+  Material(4)  : = [r g b specular].
+                 Color and specular coefficient of the shape.
+                 [r,g,b] affects the color of diffuse and ambient reflected
+                 light. Specular is a coefficient defining white specular
+                 reflection. What color that is reflected also depends on the
+                 color of the light sources. Note, r g, b and specular are
+                 given in the range 0-1. Specular=1 gives a metallic appearance.
+  Extra        : Additional parameter for cone and pipe.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>r[3]</TD><TD>{0.1,0,0}</TD><TD>Vector from frame_a to frame_b, resolved in frame_a [m]</TD></TR>
+<TR><TD>rCM[3]</TD><TD>{0,0,0}</TD><TD>Vector from frame_a to center of mass, resolved in frame_a [m]</TD></TR>
+<TR><TD>m</TD><TD>0</TD><TD>Mass of body [kg]</TD></TR>
+<TR><TD>I11</TD><TD>0</TD><TD>(1,1) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I22</TD><TD>0</TD><TD>(2,2) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I33</TD><TD>0</TD><TD>(3,3) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I21</TD><TD>0</TD><TD>(2,1) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I31</TD><TD>0</TD><TD>(3,1) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>I32</TD><TD>0</TD><TD>(3,2) element of inertia tensor [kg.m2]</TD></TR>
+<TR><TD>Shape</TD><TD>&quot;box&quot;</TD><TD>Name of shape (see info text)</TD></TR>
+<TR><TD>r0[3]</TD><TD>{0,0,0}</TD><TD>Vector from frame_a to shape origin. resolved in frame_a [m]</TD></TR>
+<TR><TD>LengthDirection[3]</TD><TD>r - r0</TD><TD>Vector in length direction, resolved in frame_a [m]</TD></TR>
+<TR><TD>WidthDirection[3]</TD><TD>{0,1,0}</TD><TD>Vector in width direction, resolved in frame_a [m]</TD></TR>
+<TR><TD>Length</TD><TD>(sqrt((r - r0)*(r - r0)))</TD><TD>Length of shape [m]</TD></TR>
+<TR><TD>Width</TD><TD>0.1</TD><TD>Width of shape [m]</TD></TR>
+<TR><TD>Height</TD><TD>0.1</TD><TD>Height of shape [m]</TD></TR>
+<TR><TD>Material[4]</TD><TD>{1,0,0,0.5}</TD><TD>Color and specular coefficient</TD></TR>
+<TR><TD>Extra</TD><TD>0.0</TD><TD>Additional parameter for cone and pipe</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model ShapeBody
+  &quot;Rigid body with visual shape (also used for animation)&quot;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.TwoTreeFrames"
+>MultiBody.Interfaces.TwoTreeFrames</A>;
+  parameter SIunits.Position r[3]={0.1,0,0}
+    &quot;Vector from frame_a to frame_b, resolved in frame_a&quot;;
+  parameter SIunits.Position rCM[3]={0,0,0}
+    &quot;Vector from frame_a to center of mass, resolved in frame_a&quot;;
+  parameter SIunits.Mass m=0 &quot;Mass of body&quot;;
+  parameter SIunits.Inertia I11=0 &quot;(1,1) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I22=0 &quot;(2,2) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I33=0 &quot;(3,3) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I21=0 &quot;(2,1) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I31=0 &quot;(3,1) element of inertia tensor&quot;;
+  parameter SIunits.Inertia I32=0 &quot;(3,2) element of inertia tensor&quot;;
+  parameter String Shape=&quot;box&quot;
+    &quot;Name of shape (see info text)&quot;;
+  parameter SIunits.Position r0[3]={0,0,0}
+    &quot;Vector from frame_a to shape origin. resolved in frame_a&quot;;
+  parameter SIunits.Position LengthDirection[3]=r - r0
+    &quot;Vector in length direction, resolved in frame_a&quot;;
+  parameter SIunits.Position WidthDirection[3]={0,1,0}
+    &quot;Vector in width direction, resolved in frame_a&quot;;
+  parameter SIunits.Length Length=(sqrt((r - r0)*(r - r0)))
+    &quot;Length of shape&quot;;
+  parameter SIunits.Length Width=0.1 &quot;Width of shape&quot;;
+  parameter SIunits.Length Height=0.1 &quot;Height of shape&quot;;
+  parameter Real Material[4]={1,0,0,0.5}
+    &quot;Color and specular coefficient&quot;;
+  parameter Real Extra=0.0 &quot;Additional parameter for cone and pipe&quot;;
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.Body2"
+>Body2</A> body(
+    r=r,
+    rCM=rCM,
+    m=m,
+    I11=I11,
+    I22=I22,
+    I33=I33,
+    I21=I21,
+    I31=I31,
+    I32=I32);
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.Shape"
+>MultiBody.Parts.Shape</A> vis(
+    Shape=Shape,
+    r0=r0,
+    LengthDirection=LengthDirection,
+    WidthDirection=WidthDirection,
+    Length=Length,
+    Width=Width,
+    Height=Height,
+    Material=Material,
+    Extra=Extra);
+equation
+  connect(frame_a, body.frame_a);
+  connect(frame_b, body.frame_b);
+  connect(vis.frame_a, frame_a);
+end ShapeBody;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Parts.ShapeI.gif" ALT="ModelicaAdditions.MultiBody.Parts.Shape" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Parts.Shape"></A><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>.Shape</H2>
+<B>General animation shape</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Parts.ShapeD.gif" ALT="ModelicaAdditions.MultiBody.Parts.Shape">
+<H3>Information</H3>
+<PRE>
+A variety of shapes can be defined for animation.
+Parameter vectors are defined with respect frame_a in [m].
+
+Parameters:
+  Shape        : Type of visual shape. Predefined shapes are
+                   shape =  box
+                            sphere
+                            cylinder
+                            cone
+                            pipe
+                            beam
+                            wirebox
+                 External shapes are specified as DXF-files. Only external shape
+                 names like  1 ,  2  etc. are supported. The corresponding
+                 definitions should be in files '1.dxf', '2.dxf' etc.
+  r0(3)        : Position vector from the origin of frame_a to the origin
+                 of the visual object.
+  LengthDirection(3): Unit vector in direction of length (will be normalized).
+  WidthDirection(3) : Unit vector in direction of width (will be normalized).
+  Length       : Length of visual shape in [m].
+  Width        : Width of visual shape in [m].
+  Height       : Height of visual shape in direction of a vector which is
+                 orthogonal to  LengthDirection  and  WidthDirection .
+  Material(4)  : = [r g b specular].
+                 Color and specular coefficient of the shape.
+                 [r,g,b] affects the color of diffuse and ambient reflected
+                 light. Specular is a coefficient defining white specular
+                 reflection. What color that is reflected also depends on the
+                 color of the light sources. Note, r g, b and specular are
+                 given in the range 0-1. Specular=1 gives a metallic appearance.
+  Extra        : Additional parameter for cone and pipe.
+
+
+In the class, the unit vectors in direction of the shape axes are computed
+and are provided as terminal variables to be used in the calling object:
+  nLength(3)   : Unit vector in direction of  AxisLength .
+  nWidth (3)   : Unit vector orthogonal to  nLength .
+  nHeight(3)   : Unit vector orthogonal to  nLength  and  nWidth.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Shape</TD><TD>&quot;box&quot;</TD><TD>Name of shape (see info text)</TD></TR>
+<TR><TD>r0[3]</TD><TD>{0,0,0}</TD><TD>Vector from frame_a to shape origin [m]</TD></TR>
+<TR><TD>LengthDirection[3]</TD><TD>{1,0,0}</TD><TD>Vector in length direction</TD></TR>
+<TR><TD>WidthDirection[3]</TD><TD>{0,1,0}</TD><TD>Vector in width direction</TD></TR>
+<TR><TD>Length</TD><TD>1</TD><TD>Length of shape [m]</TD></TR>
+<TR><TD>Width</TD><TD>0.1</TD><TD>Width of shape [m]</TD></TR>
+<TR><TD>Height</TD><TD>0.1</TD><TD>Height of shape [m]</TD></TR>
+<TR><TD>Material[4]</TD><TD>{1,0,0,0.5}</TD><TD>Color and specular coefficient</TD></TR>
+<TR><TD>Extra</TD><TD>0.0</TD><TD>Additional parameter for cone and pipe</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+model Shape &quot;General animation shape&quot;
+  extends <A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.OneFrame_a"
+>MultiBody.Interfaces.OneFrame_a</A>;
+  parameter String Shape=&quot;box&quot;
+    &quot;Name of shape (see info text)&quot;;
+  parameter Real r0[3]={0,0,0}
+    &quot;Vector from frame_a to shape origin [m]&quot;;
+  parameter Real LengthDirection[3]={1,0,0}
+    &quot;Vector in length direction&quot;;
+  parameter Real WidthDirection[3]={0,1,0}
+    &quot;Vector in width direction&quot;;
+  parameter Real Length=1 &quot;Length of shape [m]&quot;;
+  parameter Real Width=0.1 &quot;Width of shape [m]&quot;;
+  parameter Real Height=0.1 &quot;Height of shape [m]&quot;;
+  parameter Real Material[4]={1,0,0,0.5}
+    &quot;Color and specular coefficient&quot;;
+  parameter Real Extra=0.0 &quot;Additional parameter for cone and pipe&quot;;
+  Real nLength[3];
+  Real nWidth[3];
+  Real nHeight[3];
+  VisualShape vis(
+    Shape=Shape,
+    r0=r0,
+    LengthDirection=LengthDirection,
+    WidthDirection=WidthDirection,
+    Length=Length,
+    Width=Width,
+    Height=Height,
+    Material=Material,
+    Extra=Extra);
+equation
+  vis.S = Sa;
+  vis.r = r0a;
+  vis.nLength = nLength;
+  vis.nWidth = nWidth;
+  vis.nHeight = nHeight;
+  <I></I>
+  <I>/*No forces and torques*/</I>
+  fa = zeros(3);
+  ta = zeros(3);
+end Shape;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Jun 20 22:18:36 2000
+.
+</address></BODY>
+</HTML>
